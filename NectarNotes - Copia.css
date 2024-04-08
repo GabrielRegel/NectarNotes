@@ -1,0 +1,142 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    height: 100px; /* Definindo uma altura fixa para o cabeçalho */
+}
+
+.logo-img {
+    position: absolute;
+    top: -25px;
+    left: 30px;
+    transform: translateX(-50%);
+    width: 75px;
+    height: auto;
+}
+
+
+
+nav ul {
+    list-style-type: none;
+}
+
+.nav-item {
+    display: inline;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.nav-item a {
+    background-color: #ffcc00;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: #000;
+    text-decoration: none;
+}
+
+.nav-item a:hover {
+    background-color: #ffdb4d;
+}
+
+
+
+.banner {
+    text-align: center;
+    padding: 70px 20px 80px 20px; /* Ajuste de padding */
+}
+
+.banner h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    margin-top: -30px; /* Movendo o título para cima em 30 pixels */
+}
+
+.banner p {
+    font-size: 1.2em;
+    margin-bottom: 50px;
+    margin-top: -30px; /* Movendo o parágrafo para cima em 30 pixels */
+}
+
+.banner button {
+    padding: 10px 20px;
+    font-size: 1.1em;
+    background-color: #ffcc00;
+    border: none;
+    color: #000;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.banner button:hover {
+    background-color: #ffdb4d;
+}
+
+.player {
+    text-align: center;
+    padding: 20px;
+}
+
+.search-container {
+    margin: -100px auto 30px auto; /* Aqui foi ajustado para 20px de margem superior */
+    text-align: center;
+}
+
+.search-container input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    width: 300px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+}
+
+.search-container button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #ffcc00;
+    border: none;
+    border-radius: 20px;
+    color: #000;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-container button:hover {
+    background-color: #ffdb4d;
+}
+
+.song-buttons {
+    text-align: left;
+    margin-left: 1px;
+    margin-top: 80px;
+    border-left: 8px solid #ffcc00; /* Adicionando uma borda amarela à esquerda */
+    padding-left: 30px; /* Ajustando o padding para que o conteúdo não encoste na borda */
+    margin-top: 10px; /* Adicionando margem superior de 10px */
+}
+
+
+.song-button {
+    width: 150px;
+    height: 150px;
+    border: solid #ffcc0071;
+    background-size: cover;
+    background-position: center;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+h1{
+    color: #ffcc00;
+    margin-left: 10px;
+}
+
+
