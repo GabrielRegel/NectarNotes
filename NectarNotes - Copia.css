@@ -2,28 +2,34 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-color: #000;
     color: #fff;
+    background-image: url('https://t3.ftcdn.net/jpg/02/91/71/96/360_F_291719619_lyQS5pyFo3Wj43hy83o3R0oOxhaep9fQ.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    height: 100px; /* Definindo uma altura fixa para o cabeçalho */
+    width: 100%;
+    height: 80px;
+    background-color: #0d0d17;
+}
+
+.logo {
+    position: relative;
 }
 
 .logo-img {
     position: absolute;
-    top: -25px;
+    top: -50px;
     left: 30px;
     transform: translateX(-50%);
     width: 75px;
     height: auto;
 }
-
-
 
 nav ul {
     list-style-type: none;
@@ -47,23 +53,25 @@ nav ul {
     background-color: #ffdb4d;
 }
 
+.nav-list {
+    display: flex;
+    align-items: flex-start;
 
+}
 
 .banner {
     text-align: center;
-    padding: 70px 20px 80px 20px; /* Ajuste de padding */
+    padding: 70px 20px 80px 20px;
 }
 
 .banner h2 {
     font-size: 2.5em;
     margin-bottom: 40px;
-    margin-top: -30px; /* Movendo o título para cima em 30 pixels */
 }
 
 .banner p {
     font-size: 1.2em;
     margin-bottom: 50px;
-    margin-top: -30px; /* Movendo o parágrafo para cima em 30 pixels */
 }
 
 .banner button {
@@ -86,7 +94,7 @@ nav ul {
 }
 
 .search-container {
-    margin: -100px auto 30px auto; /* Aqui foi ajustado para 20px de margem superior */
+    margin: -100px auto 30px auto;
     text-align: center;
 }
 
@@ -118,9 +126,9 @@ nav ul {
     text-align: left;
     margin-left: 1px;
     margin-top: 80px;
-    border-left: 8px solid #ffcc00; /* Adicionando uma borda amarela à esquerda */
-    padding-left: 30px; /* Ajustando o padding para que o conteúdo não encoste na borda */
-    margin-top: 10px; /* Adicionando margem superior de 10px */
+    border-left: 8px solid #ffcc00;
+    padding-left: 30px;
+    margin-top: 10px;
 }
 
 
@@ -134,9 +142,7 @@ nav ul {
     cursor: pointer;
 }
 
-h1{
+h1 {
     color: #ffcc00;
     margin-left: 10px;
 }
-
-
