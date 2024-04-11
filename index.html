@@ -1,57 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="shortcut icon" type="imagex/png" href="NectarNotesLogo - Copia.jpg">
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nectar Notes</title>
-    <link rel="stylesheet" href="NectarNotes - Copia.css">
+<link rel="shortcut icon" type="imagex/png" href="NectarNotesLogo - Copia.jpg">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login</title>
+<style>
+    body {
+        background-color: #ffd800; /* Amarelo claro */
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    
+    .login-container {
+        background-color: white;
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+    
+    h1 {
+        color: #333; /* Cinza escuro */
+        margin-bottom: 20px;
+    }
+    
+    input[type="text"],
+    input[type="password"],
+    input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+    
+    input[type="submit"] {
+        background-color: #ffd800; /* Amarelo */
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+    
+    input[type="submit"]:hover {
+        background-color: #ffea00; /* Amarelo mais claro */
+    }
+    
+    .signup {
+        margin-top: 10px;
+        color: #666; /* Cinza médio */
+    }
+</style>
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <img src="NectarNotesLogo - Copia.jpg" alt="Logo NectarNotes" class="logo-img">
-        </div>
-    
-        <nav>
-            <ul class="nav-list">
-                <li class="nav-item"><a href="#">Início</a></li>
-                <li class="nav-item"><a href="#">Explorar</a></li>
-                <li class="nav-item"><a href="#">Biblioteca</a></li>
-                <li class="nav-item"><a href="#">Pets</a></li>
-                <li class="nav-item"><a href="#">Configuração</a></li>
-            </ul>
-        </nav>
+<div class="login-container">
+    <h1>Login</h1>
+    <form id="loginForm">
+        <input type="text" name="username" placeholder="Username" required><br>
+        <input type="password" name="password" placeholder="Password" required><br>
+        <input type="submit" value="Login">
+    </form>
+    <div class="signup">Don't have an account? <a href="TelaCadastro.html">Sign up</a></div>
+</div>
 
-    </header>
-    
-    
-    
-    
-    <section class="banner">
-        <h2>Descubra novas músicas</h2>
-        <p>Explore milhões de músicas de graça.</p>
-    </section>
-
-    <main>
-        <div class="search-container">
-            <input type="text" placeholder="Pesquisar">
-            <button>Pesquisar</button>
-        </div>
-        <div class="search-results">
-            <!-- Os resultados da pesquisa aparecerão aqui -->
-        </div>
-    </main>
-    <div class="TituloMusica"><h1>Musicas</h1></div>
-
-    <div class="song-buttons">
-        <button class="song-button" style="background-image: url('https://th.bing.com/th/id/OIP.PT8_gggWp56JYaorklFhIQHaHa?rs=1&pid=ImgDetMain')"></button>
-        <button class="song-button" style="background-image: url('https://th.bing.com/th/id/OIP.norFQOH5yEQ1LFQnM7etCQHaEK?rs=1&pid=ImgDetMain')"></button>
-        <button class="song-button" style="background-image: url('https://th.bing.com/th/id/OIP.GQCb6GSkP13sfWGJmeqKogHaGL?rs=1&pid=ImgDetMain')"></button>
-
-        <!-- Adicione mais botões conforme necessário -->
-    </div>
-    
+<script>
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+        // Evitar o envio padrão do formulário
+        event.preventDefault();
+        
+        // Redirecionar para a página desejada (substitua "pagina_de_destino.html" pelo URL da página)
+        window.location.href = "NectarNotes - Copia.html";
+    });
+</script>
 </body>
 </html>
