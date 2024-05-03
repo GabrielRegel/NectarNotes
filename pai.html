@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Cadastro</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: yellow; /* Cor de fundo amarelo */
+        }
+
+        form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input, button {
+            margin-bottom: 10px;
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #4CAF50; /* Cor do botão */
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049; /* Cor do botão quando hover */
+        }
+    </style>
+</head>
+<body>
+    <form action="processar.php" method="POST">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required> <br>
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required> <br>
+        <label for="telefone">Telefone:</label>
+        <input type="tel" id="telefone" name="telefone" placeholder="Digite seu telefone" required> <br>
+        <label for="rua">Rua:</label>
+        <input type="text" id="rua" name="rua" placeholder="Digite o nome da rua" required> <br>
+        <label for="cidade">Cidade: </label>
+        <input type="text" id="cidade" name="cidade" placeholder="Digite o nome da cidade" required> <br>
+        <label for="estado">Estado:</label>
+        <input type="text" id="estado" name="estado" placeholder="Digite o nome do estado" required> <br>
+        <label for="cep">CEP: </label>
+        <input type="text" id="cep" name="cep" placeholder="Digite o CEP" required> <br>
+        <label for="dataNascimento">Data de Nascimento:</label>
+        <input type="date" id="dataNascimento" name="dataNascimento" required> <br>
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>
