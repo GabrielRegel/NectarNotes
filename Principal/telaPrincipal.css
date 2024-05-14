@@ -1,3 +1,4 @@
+/* Estilos padrão */
 body {
     margin: 0;
     padding: 0;
@@ -37,15 +38,32 @@ body {
 .menu ul li a:hover {
     background-color: #ffffff; /* Cor de fundo ao passar o mouse */
 }
-img{
+
+img {
     height: 50px;
     width: auto;
 }
-.Temp{
+
+.Temp {
     text-align: center;
 }
-#teste{
+
+#teste {
     height: 250px;
     width: auto;
     border: 3px solid #ffdf60;
+}
+
+/* Media queries para tornar o layout responsivo */
+
+@media only screen and (max-width: 768px) {
+    .menu {
+        width: 60px;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .menu {
+        width: 50px;
+    }
 }
