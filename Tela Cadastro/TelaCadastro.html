@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" type="imagex/png" href="NectarNotesLogo - Copia.jpg">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+    <style>
+        /* Coloque seu CSS aqui */
+        body {
+            background-color: #ffd800;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url(talvez\ tlgd.png);    
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .signup-container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 20px;
+        }
+
+        h1 {
+            color: #333; /* Cinza escuro */
+            margin-bottom: 20px;
+        }
+
+        img {
+            width: 100px; /* Ajuste conforme necessário */
+            margin-bottom: 20px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #ffd800; /* Amarelo */
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #ffea00; /* Amarelo mais claro */
+        }
+
+        .password-container {
+            grid-column: span 2;
+        }
+
+        /* Adicionando estilo para a responsividade */
+        @media (max-width: 768px) {
+            .signup-container {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto auto;
+                text-align: center;
+            }
+            img {
+                margin: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="signup-container">
+        <h1>SignUp</h1>
+        <form id="signupForm">
+            <input type="text" name="username" placeholder="Username" required><br>
+            <input type="email" name="email" placeholder="Email" required><br>
+            <div class="password-container">
+                <input type="password" name="password" placeholder="Password" required><br>
+                <input type="password" name="confirmPassword" placeholder="Confirm Password" required><br>
+            </div>
+            <input type="submit" value="SignUp">
+        </form>
+    </div>
+
+    <script>
+        // Coloque seu JavaScript aqui
+        document.getElementById('signupForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Aqui você pode adicionar validações de senha e confirmação de senha
+            var password = document.getElementsByName('password')[0].value;
+            var confirmPassword = document.getElementsByName('confirmPassword')[0].value;
+            if (password !== confirmPassword) {
+                alert("As senhas não correspondem!");
+                return;
+            }
+
+            // Redirecionar para a página de login após o cadastro (substitua "login.html" pelo URL da página de login)
+            window.location.href = "Tela_Principal/index.html";
+        });
+    </script>
+</body>
+</html>

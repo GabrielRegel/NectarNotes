@@ -1,0 +1,54 @@
+body {
+    background-color: #ffd800; /* Amarelo claro */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url(talvez\ tlgd.png);    
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+}
+
+.login-container {
+    background-color: white;
+    padding: 70px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h1 {
+    color: #333; /* Cinza escuro */
+    margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: #ffd800; /* Amarelo */
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #ffea00; /* Amarelo mais claro */
+}
+
+.signup {
+    margin-top: 10px;
+    color: #666; /* Cinza médio */
+}
