@@ -54,7 +54,7 @@ img {
     border: 3px solid #ffdf60;
 }
 
-/* Media queries para tornar o layout responsivo */
+/* Media queries para tornar o layout responsivo 
 
 @media only screen and (max-width: 768px) {
     .menu {
@@ -67,3 +67,4 @@ img {
         width: 50px;
     }
 }
+*/

@@ -91,3 +91,38 @@ img {
 h1{
     text-align: center;
 }
+.menuPesquisa{
+    width: 40%;
+    height: 80%;
+    margin: auto;
+    background-color: #0d0d17;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+button {
+    background-color: #ffd800;
+    color: #000000;
+    padding: 10px 20px;
+    border: solid black;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    text-align: center;
+    text-decoration: none;
+}
+button:hover {
+    background-color: #ffdf60;
+}
+.search-container {
+    margin: 20px auto 30px auto;
+    text-align: center;
+}
+
+.search-container input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    width: 300px;
+    border: solid black;
+    border-radius: 20px;
+    outline: none;
+}
