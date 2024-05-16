@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" type="image/png" href="../Icones/Logo.jpg">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Config.css">
+    <title>Configurações</title>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Configurações do Perfil</title>
+        <!DOCTYPE html>
+
+
+<div class="container">
+    <h1>Configurações do Perfil</h1>
+    
+    <div class="profile-info">
+        <img src="default_profile_pic.jpg" alt="Foto de Perfil">
+        <label for="profile-photo" class="change-photo-btn">Trocar Foto</label>
+        <input type="file" id="profile-photo" accept="image/*">
+    </div>
+    
+    <div class="profile-info">
+        <label for="profile-name">Nome de Perfil:</label>
+        <input type="text" id="profile-name" class="change-name-input" value="Nome de Usuário">
+    </div>
+    
+    <div class="profile-info">
+        <label for="profile-bio">Biografia:</label>
+        <textarea id="profile-bio" class="change-bio-input" rows="4">Sua biografia aqui</textarea>
+    </div>
+    
+    <div class="profile-info">
+        <label for="profile-country">País:</label>
+        <input type="text" id="profile-country" class="change-country-input" value="Seu país">
+    </div>
+    
+    <div class="profile-info">
+        <label for="profile-password">Nova Senha:</label>
+        <input type="password" id="profile-password" class="change-password-input" placeholder="Nova senha">
+    </div>
+    
+  
+<div class="container">
+    <button class="toggle-btn" onclick="toggleMode()">Modo Claro/Escuro</button>
+  </div>
+  
+  <script>
+    function toggleMode() {
+      var body = document.body;
+      body.classList.toggle("dark-mode");
+    }
+  </script>
+  
+    <button class="save-btn">Salvar Configurações</button>
+    
+    <button class="delete-account-btn">Excluir Conta</button>
+</div>
+
+</body>
+
+
+    
+    <div class="menu">
+        <ul>
+            <li><a href="../Principal/principal.html" onclick="handleButtonClick('inicio')"><img src="../Principal.png" alt="Botão de Início"></a></li>
+            <li><a href="../perfil/TelaPerfil.html" onclick="handleButtonClick('perfil')"><img src="../Perfil.png" alt="Botão de Perfil"></a></li>
+            <li><a href="../Pesquisa/TelaPesquisa.html" onclick="handleButtonClick('pesquisa')"><img src="../Pesquisa.png" alt="Botão de Pesquisa"></a></li>
+            <li><a href="../Album/MusicasSalvas.html" onclick="handleButtonClick('album')"><img src="../Curtidas.png" alt="Botão de Album"></a></li>
+            <li><a href="../Pets/TelaPets.html" onclick="handleButtonClick('pets')"><img src="../Pets.png" alt="Botão de Pets"></a></li>
+            <li><a href="../Configurações/TelaConfig.html" onclick="handleButtonClick('configuracoes')"><img src="../Configuração.png" alt="Botão de Configurações"></a></li>
+        </ul>
+    </div>
+</body>
+</html>
