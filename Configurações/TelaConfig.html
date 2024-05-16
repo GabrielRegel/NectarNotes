@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" type="image/png" href="../Icones/Logo.jpg">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Config.css">
+    <title>Configurações</title>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Configurações do Perfil</title>
+        <!DOCTYPE html>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #12121b; 
+            color: #fff;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #20212c; 
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .profile-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .profile-info img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+        .profile-info input[type="file"] {
+            display: none;
+        }
+        .change-photo-btn,
+        .delete-account-btn,
+        .save-btn {
+            background-color: #f0c30f; /* Amarelo */
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+
+        .delete-account-btn
+         {
+            background-color: #dd3630; 
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .delete-account-btn:hover{
+            background-color: #ac2f26; 
+        }
+        .change-photo-btn:hover,
+        .save-btn:hover {
+            background-color: #e6b50e; /* Amarelo mais escuro ao passar o mouse */
+        }
+
+        
+        .change-name-input,
+        .change-bio-input,
+        .change-country-input,
+        .change-password-input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            color: #fff;
+            background-color: #202225; /* Cor de fundo mais escura */
+            margin-bottom: 20px;
+        }
+       
+    
+
+.toggle-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.toggle-btn:hover {
+  background-color: #9a94a1;
+}
+
+.dark-mode {
+  background-color: #e9d357;
+  color: #fff;
+}
+        
+    </style>
+
+<div class="container">
+    <h1>Configurações do Perfil</h1>
+    
+    <div class="profile-info">
+        <img src="default_profile_pic.jpg" alt="Foto de Perfil">
+        <label for="profile-photo" class="change-photo-btn">Trocar Foto</label>
+        <input type="file" id="profile-photo" accept="image/*">
+    </div>
+    
+    <div class="profile-info">
+        <label for="profile-name">Nome de Perfil:</label>
+        <input type="text" id="profile-name" class="change-name-input" value="Nome de Usuário">
+    </div>
+    
+    <div class="profile-info">
+        <label for="profile-bio">Biografia:</label>
+        <textarea id="profile-bio" class="change-bio-input" rows="4">Sua biografia aqui</textarea>
+    </div>
+    
+    <div class="profile-info">
+        <label for="profile-country">País:</label>
+        <input type="text" id="profile-country" class="change-country-input" value="Seu país">
+    </div>
+    
+    <div class="profile-info">
+        <label for="profile-password">Nova Senha:</label>
+        <input type="password" id="profile-password" class="change-password-input" placeholder="Nova senha">
+    </div>
+    
+  
+<div class="container">
+    <button class="toggle-btn" onclick="toggleMode()">Modo Claro/Escuro</button>
+  </div>
+  
+  <script>
+    function toggleMode() {
+      var body = document.body;
+      body.classList.toggle("dark-mode");
+    }
+  </script>
+  
+    <button class="save-btn">Salvar Configurações</button>
+    
+    <button class="delete-account-btn">Excluir Conta</button>
+</div>
+
+</body>
+
+
+    
+    <div class="menu">
+        <ul>
+            <li><a href="../Principal/principal.html" onclick="handleButtonClick('inicio')"><img src="../Principal.png" alt="Botão de Início"></a></li>
+            <li><a href="../perfil/TelaPerfil.html" onclick="handleButtonClick('perfil')"><img src="../Perfil.png" alt="Botão de Perfil"></a></li>
+            <li><a href="../Pesquisa/TelaPesquisa.html" onclick="handleButtonClick('pesquisa')"><img src="../Pesquisa.png" alt="Botão de Pesquisa"></a></li>
+            <li><a href="../Album/MusicasSalvas.html" onclick="handleButtonClick('album')"><img src="../Curtidas.png" alt="Botão de Album"></a></li>
+            <li><a href="../Pets/TelaPets.html" onclick="handleButtonClick('pets')"><img src="../Pets.png" alt="Botão de Pets"></a></li>
+            <li><a href="../Configurações/TelaConfig.html" onclick="handleButtonClick('configuracoes')"><img src="../Configuração.png" alt="Botão de Configurações"></a></li>
+        </ul>
+    </div>
+</body>
+</html>
