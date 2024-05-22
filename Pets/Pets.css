@@ -88,6 +88,36 @@ img {
     height: 50px;
     width: auto;
 }
-h1{
+#TituloDaPagina{
     text-align: center;
+}
+.MeuPet{
+    display: grid;
+    margin-left: 7%;
+    margin-top: 20px;
+}
+#ImgPet{
+    height: 300px;
+    width: auto;
+
+}
+.scrollable-container {
+
+    margin: 0 auto; /* Centraliza o contêiner horizontalmente */
+    max-width: 80%; /* Define a largura máxima do contêiner */
+    position: relative; /* Adicionado */
+}
+
+
+.song {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    margin-right: 10px;
+    background-color: #0d0d17;
+    text-align: center;
+    line-height: 200px;
+    font-size: 20px;
+    border: none;
+    border-radius: 18px;
 }

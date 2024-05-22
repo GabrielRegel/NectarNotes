@@ -2,7 +2,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #ffd800;
+    background-color: #36393f;
     background-size: cover;
     color: #fff;
     display: grid;
@@ -57,8 +57,15 @@ body {
 }
 
 .button:hover {
-    background-color: #eeff00;
+    transform: scale(1.1); /* Aumenta o botão em 10% */
+    transition: transform 0.3s; /* Adiciona uma transição suave */
 }
+
+.song:hover {
+    transform: scale(1.1); /* Aumenta o botão da música em 10% */
+    transition: transform 0.3s; /* Adiciona uma transição suave */
+}
+
 
 .menu {
     width: 80px;
@@ -95,11 +102,11 @@ body {
 img {
     height: 50px;
     width: auto;
+    border: none;
+    border-radius: 20px;
 }
 
 .scrollable-container {
-    overflow-x: hidden; /* Alterado para hidden para esconder a barra de rolagem */
-    white-space: nowrap;
     margin: 0 auto; /* Centraliza o contêiner horizontalmente */
     max-width: 80%; /* Define a largura máxima do contêiner */
     position: relative; /* Adicionado */
@@ -123,19 +130,6 @@ img {
     text-align: center;
 }
 
-.scroll-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 40px;
-    height: 40px;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-}
-
 .scroll-btn:hover {
     background-color: rgba(0, 0, 0, 0.8);
 }
@@ -145,4 +139,12 @@ img {
 #teste{
     height: 220px;
     margin-bottom: 100px;
+}
+#CapaMusicaImg{
+    height: 180px;
+    width: 180px;
+    padding-top: 10px;
+    border: none;
+    border-radius: 10px;
+    object-fit: cover;
 }
