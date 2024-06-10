@@ -1,0 +1,227 @@
+
+/* Estilos para a scrollbar */
+::-webkit-scrollbar {
+    width: 10px; /* largura da scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: #0d0d14; /* cor de fundo da track */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1c1e2c; /* cor do thumb */
+    border-radius: 10px; /* borda arredondada */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #191a25; /* cor do thumb ao passar o mouse */
+}
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #131722;
+    background-size: cover;
+    color: #fff;
+    display: grid;
+}
+
+.container {
+    display: flex;
+    width: 80%;
+    margin: 20px auto;
+    background-color: #11111b;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.sidebar {
+    width: 70px;
+    background-color: #000;
+    padding: 20px;
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.profile-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-left: 20px;
+}
+
+.profile-info {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.button {
+    background-color: #ffd800;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+}
+
+.button:hover {
+    transform: scale(1.1); /* Aumenta o botão em 10% */
+    transition: transform 0.3s; /* Adiciona uma transição suave */
+}
+
+.song:hover {
+    transform: scale(1.1); /* Aumenta o botão da música em 10% */
+    transition: transform 0.3s; /* Adiciona uma transição suave */
+}
+
+
+.menu {
+    width: 80px;
+    height: 100vh;
+    border-radius: 6px;
+    border: 2px solid #000000;
+    background-color: #0d0d17;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu ul li {
+    padding: 10px;
+    border-bottom: 1px solid #ffdf60;
+}
+
+.menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+}
+
+.menu ul li a:hover {
+    background-color: #0d0d17;
+}
+
+img {
+    height: 50px;
+    width: auto;
+    border: none;
+    border-radius: 20px;
+}
+
+.scrollable-container {
+    margin: 0 auto; /* Centraliza o contêiner horizontalmente */
+    max-width: 80%; /* Define a largura máxima do contêiner */
+    overflow-x: auto;
+    white-space: nowrap;
+    display: flex;
+    position: relative; /* Adicionado */
+}
+
+
+.song {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    margin-right: 10px;
+    background-color: #1a1e30;
+    text-align: center;
+    line-height: 200px;
+    font-size: 20px;
+    border: none;
+    border-radius: 18px;
+
+}
+
+.nomeCatalago {
+    text-align: center;
+}
+
+.scroll-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+.Temp{
+    text-align: center;
+}
+#teste{
+    height: 220px;
+    margin-bottom: 100px;
+}
+#CapaMusicaImg{
+    height: 180px;
+    width: 180px;
+    padding-top: 10px;
+    border: none;
+    border-radius: 10px;
+    object-fit: cover;
+}
+#container1, #container2, #container3 {
+    overflow-y: hidden;
+}
+#container1, #container2, #container3 {
+    overflow-x: hidden;
+}
+/*Barra de Pesquisa*/
+.group {
+    display: flex;
+    line-height: 28px;
+    align-items: center;
+    position: absolute; /* Alterado */
+    top: 20px; /* Define a distância do topo */
+    right: 190px; /* Define a distância da direita */
+    z-index: 999; /* Garante que a barra de pesquisa fique sobreposta a outros elementos */
+}
+
+.input {
+    width: 400px; /* Ajuste conforme necessário */
+    height: 40px;
+    line-height: 28px;
+    padding: 0 1rem;
+    padding-left: 2.5rem;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    outline: none;
+    background-color: #0d0c22;
+    color: #f3f3f4;
+    transition: 0.3s ease;
+}
+
+.input::placeholder {
+    color: #9e9ea7;
+}
+
+.input:focus,
+input:hover {
+    outline: none;
+    border-color: rgba(255, 223, 96, 0.4);
+    background-color: #0d0c22;
+    box-shadow: 0 0 0 4px rgb(247 127 0 / 10%);
+}
+
+.icon {
+    position: absolute;
+    left: 1rem;
+    fill: #9e9ea7;
+    width: 1rem;
+    height: 1rem;
+}
+
+  
