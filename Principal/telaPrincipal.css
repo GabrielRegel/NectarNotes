@@ -117,7 +117,7 @@ body {
 }
 
 .menu ul li a:hover {
-    background-color: #ffffff;
+    background-color: #0d0d17;
 }
 
 img {
@@ -184,12 +184,14 @@ img {
     display: flex;
     line-height: 28px;
     align-items: center;
-    position: relative;
-    max-width: 190px;
-  }
-  
-  .input {
-    width: 100%;
+    position: absolute; /* Alterado */
+    top: 20px; /* Define a distância do topo */
+    right: 190px; /* Define a distância da direita */
+    z-index: 999; /* Garante que a barra de pesquisa fique sobreposta a outros elementos */
+}
+
+.input {
+    width: 400px; /* Ajuste conforme necessário */
     height: 40px;
     line-height: 28px;
     padding: 0 1rem;
@@ -197,28 +199,29 @@ img {
     border: 2px solid transparent;
     border-radius: 8px;
     outline: none;
-    background-color: #f3f3f4;
-    color: #0d0c22;
+    background-color: #0d0c22;
+    color: #f3f3f4;
     transition: 0.3s ease;
-  }
-  
-  .input::placeholder {
+}
+
+.input::placeholder {
     color: #9e9ea7;
-  }
-  
-  .input:focus,
-  input:hover {
+}
+
+.input:focus,
+input:hover {
     outline: none;
-    border-color: rgba(247, 127, 0, 0.4);
-    background-color: #fff;
+    border-color: rgba(255, 223, 96, 0.4);
+    background-color: #0d0c22;
     box-shadow: 0 0 0 4px rgb(247 127 0 / 10%);
-  }
-  
-  .icon {
+}
+
+.icon {
     position: absolute;
     left: 1rem;
     fill: #9e9ea7;
     width: 1rem;
     height: 1rem;
-  }
+}
+
   
