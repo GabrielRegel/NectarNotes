@@ -27,6 +27,7 @@ body {
     background-size: cover;
     color: #fff;
     display: grid;
+    user-select: none;
 }
 
 .container {
