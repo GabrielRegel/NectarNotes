@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="shortcut icon" type="image/png" href="../Icones/Logo.jpg">
+    <link rel="shortcut icon" type="image/jpg" href="../Logo.jpg">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Config.css">
@@ -9,7 +9,6 @@
 </head>
 <body>
     <div class="container">
-        <h1>Configurações do Perfil</h1>
         
         <div class="profile-info">
             <img id="profile-pic" src="default_profile_pic.jpg" alt="Foto de Perfil">
@@ -19,22 +18,22 @@
         
         <div class="profile-info">
             <label for="profile-name">Nome de Perfil:</label>
-            <input type="text" id="profile-name" class="change-name-input" value="Nome de Usuário">
+            <input type="text" id="profile-name" class="change-name-input" value="Nome de Usuário" placeholder="Digite seu novo nome de U">
         </div>
         
         <div class="profile-info">
             <label for="profile-email">Email:</label>
-            <input type="email" id="profile-email" class="change-email-input" value="email@example.com">
+            <input type="email" id="profile-email" class="change-email-input" value="SeuEmail@example.com" readonly>
         </div>
 
         <div class="profile-info">
             <label for="profile-bio">Biografia:</label>
-            <textarea id="profile-bio" class="change-bio-input" rows="4">Sua biografia aqui</textarea>
+            <input id="profile-bio" placeholder="Coloque sua bibliografia aqui"></input>
         </div>
         
         <div class="profile-info">
-            <label for="profile-password">Nova Senha:</label>
-            <input type="password" id="profile-password" class="change-password-input" placeholder="Nova senha">
+            <label for="profile-password">Senha:</label>
+            <input type="password" id="profile-password" class="change-password-input" placeholder="Nova senha" value="SuaSenha123">
         </div>
         
         <div class="profile-info">
@@ -42,17 +41,13 @@
             <select id="profile-country" class="change-country-input">
                 <option value="brasil">Brasil</option>
                 <option value="USA">Estados Unidos</option>
-                <!-- Adicione mais opções de países conforme necessário -->
                 <option value="França">França</option>
-                <option value="Espanha"> Espanha</option>
+                <option value="Espanha">Espanha</option>
                 <option value="Alemanha">Alemanha</option>
-                <option value="Reino Unido"> Reino Unido</option>
-                <option value="China"> China</option>
+                <option value="Reino Unido">Reino Unido</option>
+                <option value="China">China</option>
+                
             </select>
-        </div>
-        
-        <div class="profile-info">
-            <button class="toggle-btn" onclick="toggleMode()">Modo Claro/Escuro</button>
         </div>
         
         <button class="save-btn" onclick="saveSettings()">Salvar Configurações</button>
@@ -61,11 +56,6 @@
     </div>
 
     <script>
-        function toggleMode() {
-            var body = document.body;
-            body.classList.toggle("dark-mode");
-        }
-
         function displayProfilePic(input) {
             if (input.files && input.files[0]) {
                 var reader = new FileReader();
