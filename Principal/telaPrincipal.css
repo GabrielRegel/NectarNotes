@@ -225,4 +225,77 @@ input:hover {
     height: 1rem;
 }
 
-  
+  /* Media Queries para responsividade */
+@media (max-width: 480px) {
+    body {
+        display: block;
+        padding: 10px;
+    }
+
+    .container {
+        width: 100%;
+        margin: 0;
+    }
+    
+    .Temp img {
+        height: 150px;
+        margin-bottom: 20px;
+    }
+
+    .menu {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .menu ul {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .menu ul li {
+        padding: 5px;
+        border-bottom: none;
+    }
+
+    .menu ul li a img {
+        height: 30px;
+        width: auto;
+    }
+
+    .group {
+        flex-direction: column;
+        align-items: flex-start;
+        position: static;
+        margin: 20px 0;
+        width: 100%;
+    }
+
+    .input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .scrollable-container {
+        max-width: 100%;
+    }
+
+    .song {
+        width: 150px;
+        height: 150px;
+        margin-right: 5px;
+    }
+
+    .nomeCatalago {
+        margin: 10px 0;
+    }
+
+    .profile-img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .profile-info {
+        margin-right: 0;
+    }
+}
