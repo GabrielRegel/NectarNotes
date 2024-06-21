@@ -318,6 +318,12 @@ input:hover {
     height: 1rem;
 }
 
+#LupaPesquisa{
+    width: 25px;
+    margin-top: 8px;
+    margin-left: 8px;
+}
+
   /* Media Queries para responsividade */
 @media (max-width: 480px) {
     body {
@@ -392,3 +398,5 @@ input:hover {
         margin-right: 0;
     }
 }
+
+
