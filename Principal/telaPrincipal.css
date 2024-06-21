@@ -180,7 +180,7 @@ input:hover {
     width: 80px;
     height: 100vh;
     border-radius: 6px;
-    border: 2px solid #000000;
+    border: none;
     background-color: #0d0d17;
     position: fixed;
     left: 0;
@@ -218,7 +218,8 @@ img {
 
 .scrollable-container {
     margin: 0 auto; /* Centraliza o contêiner horizontalmente */
-    max-width: 80%; /* Define a largura máxima do contêiner */
+    max-width: 100%; /* Define a largura máxima do contêiner e deixa o conteiner arrastavel(scrollavel) */
+    margin-left: 6%;
     overflow-x: auto;
     white-space: nowrap;
     display: flex;
@@ -241,7 +242,12 @@ img {
 }
 
 .nomeCatalago {
-    text-align: center;
+    text-align: left;
+    margin-left: 6%;
+    font-family: 'Franklin Gothic Heavy';
+    color: #ffd800;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.3),
+
 }
 
 .scroll-btn:hover {
@@ -255,16 +261,12 @@ img {
   text-shadow: 2px 2px 5px rgba(0,0,0,0.3),
   
 }
-#teste{
-    height: 220px;
-    margin-bottom: 100px;
-}
 #CapaMusicaImg{
     height: 180px;
     width: 180px;
     padding-top: 10px;
     border: none;
-    border-radius: 10px;
+    border-radius: 20px;
     object-fit: cover;
 }
 #container1, #container2, #container3 {
@@ -274,18 +276,25 @@ img {
     overflow-x: hidden;
 }
 /*Barra de Pesquisa*/
+#LupaPesquisa{
+    width: 25px;
+    margin-top: 8px;
+    margin-left: 8px;
+}
+
 .group {
     display: flex;
     line-height: 28px;
     align-items: center;
-    position: absolute; /* Alterado */
-    top: 20px; /* Define a distância do topo */
-    right: 10px; /* Define a distância da direita */
-    z-index: 999; /* Garante que a barra de pesquisa fique sobreposta a outros elementos */
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    z-index: 999;
+    margin-right: 3%;
 }
 
 .input {
-    width: 400px; /* Ajuste conforme necessário */
+    width: 400px;
     height: 40px;
     line-height: 28px;
     padding: 0 1rem;
@@ -299,11 +308,30 @@ img {
 }
 
 .input::placeholder {
-    color: #9e9ea7;
+    color: #ffe75f; /* Cor amarela para o placeholder */
+}
+
+/* Estilos para navegadores Webkit (Chrome, Safari, etc.) */
+.input::-webkit-input-placeholder {
+    color: #ffe75f;
+}
+
+/* Estilos para Firefox */
+.input::-moz-placeholder {
+    color: #ffd9008e;
+}
+
+.input:-moz-placeholder {
+    color: #ffd9008e;
+}
+
+/* Estilos para Internet Explorer */
+.input:-ms-input-placeholder {
+    color: #ffd9008e;
 }
 
 .input:focus,
-input:hover {
+.input:hover {
     outline: none;
     border-color: rgba(255, 223, 96, 0.4);
     background-color: #0d0c22;
@@ -316,12 +344,6 @@ input:hover {
     fill: #9e9ea7;
     width: 1rem;
     height: 1rem;
-}
-
-#LupaPesquisa{
-    width: 25px;
-    margin-top: 8px;
-    margin-left: 8px;
 }
 
   /* Media Queries para responsividade */
