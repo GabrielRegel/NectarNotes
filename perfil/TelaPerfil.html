@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil do Twitter</title>
+    <link rel="stylesheet" href="Perfil.css">
+</head>
+<body>
+    <div class="menu">
+        <ul>
+            <li><a href="../Principal/principal.html" onclick="handleButtonClick('inicio')"><img src="../Principal.png" alt="Botão de Início"></a></li>
+            <li><a href="../perfil/TelaPerfil.html" onclick="handleButtonClick('perfil')"><img src="../Perfil.png" alt="Botão de Perfil"></a></li>
+            <li><a href="../Pesquisa/TelaPesquisa.html" onclick="handleButtonClick('pesquisa')"><img src="../Pesquisa.png" alt="Botão de Pesquisa"></a></li>
+            <li><a href="../Album/MusicasSalvas.html" onclick="handleButtonClick('album')"><img src="../Curtidas.png" alt="Botão de Album"></a></li>
+            <li><a href="../Pets/TelaPets.html" onclick="handleButtonClick('pets')"><img src="../Pets.png" alt="Botão de Pets"></a></li>
+            <li><a href="../Configurações/TelaConfig.html" onclick="handleButtonClick('configuracoes')"><img src="../Configuração.png" alt="Botão de Configurações"></a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <div class="banner">
+            <button onclick="handleBannerImage()">Escolher Imagem de Banner</button>
+        </div>
+        <div class="profile-picture-container">
+            <img src="../Logo.jpg" alt="Profile Picture" class="profile-picture" onclick="handleProfileImage()">
+        </div>
+        <div class="profile-info">
+            <h2 class="username">Uni 723</h2>
+            <p class="user-id">@universo723</p>
+            <p class="bio">Artes muito legais ai</p>
+        </div>
+        <div class="tabs">
+            <div class="tab active">MusicasSalvas</div>
+            <div class="tab">Fotos</div>
+            <div class="tab">Vídeos</div>
+            <div class="tab">Likes</div>
+        </div>
+        <div class="info">
+            <div class="info-item">
+                <span class="info-text">Curitiba, Brasil</span>
+            </div>
+            <div class="info-item">
+                <span class="info-text">Nascido(a) em 4 de junho de 2007</span>
+            </div>
+            <div class="info-item">
+                <span class="info-text">Ingressou em outubro de 2017</span>
+            </div>
+            <div class="info-item">
+                <span class="info-text">10 Seguindo</span>
+            </div>
+            <div class="info-item">
+                <span class="info-text">14 Seguidores</span>
+            </div>
+        </div>
+    </div>
+    <script>
+        function handleBannerImage() {
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = 'image/*';
+            input.onchange = function(event) {
+                const file = event.target.files[0];
+                const reader = new FileReader();
+                reader.onload = function(readerEvent) {
+                    const banner = document.querySelector('.banner');
+                    banner.style.backgroundImage = `url(${readerEvent.target.result})`;
+                    banner.style.backgroundSize = 'cover';
+                };
+                reader.readAsDataURL(file);
+            };
+            input.click();
+        }
+
+        function handleProfileImage() {
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = 'image/*';
+            input.onchange = function(event) {
+                const file = event.target.files[0];
+                const reader = new FileReader();
+                reader.onload = function(readerEvent) {
+                    const profilePicture = document.querySelector('.profile-picture');
+                    profilePicture.src = readerEvent.target.result;
+                };
+                reader.readAsDataURL(file);
+            };
+            input.click();
+        }
+    </script>
+</body>
+</html>
