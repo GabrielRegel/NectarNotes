@@ -94,7 +94,7 @@ body {
 
 .menu ul li {
     padding: 10px;
-    border-bottom: 1px solid #ffffff; /* Linha separadora */
+    border-bottom: 1px solid #ffdf60; /* Linha separadora */
 }
 
 .menu ul li a {
@@ -104,7 +104,7 @@ body {
 }
 
 .menu ul li a:hover {
-    background-color: #ffffff; /* Cor de fundo ao passar o mouse */
+    background-color: #0d0d17; /* Cor de fundo ao passar o mouse */
 }
 
 img {
