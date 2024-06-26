@@ -1,74 +1,41 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #ffd800;
-    background-size: cover;
-    color: #fff;
-    display: grid;
-}
-
-.container {
     display: flex;
-    width: 80%;
-    margin: 20px auto;
-    background-color: #0d0d17;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-}
-
-.sidebar {
-    width: 70px;
-    background-color: #000;
-    padding: 20px;
-}
-
-.profile-header {
-    display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
-    padding: 20px;
+    min-height: 100vh;
+    background-color: #131722;
+    color: white;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    user-select: none;
 }
 
-.profile-img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin-left: 20px;
-}
-
-.profile-info {
-    flex: 1;
-    margin-right: 20px;
-}
-
-.button {
-    background-color: #ffd800;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-bottom: 10px;
-    display: block;
-    text-align: center;
-    text-decoration: none;
-}
-
-.button:hover {
-    background-color: #eeff00;
+header{
+    display: flex;
+    height: 250px;
+    width: 100%;
+    background-color: #ffd738;
+    box-shadow: 0 0 110px rgba(255, 230, 37, 0.66);
+    position: absolute;
+    margin-top: -34%;
+    border: 3px solid black;
+    justify-content: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: black;
+    text-shadow: 0 0 30px rgb(0, 0, 0);
+    font-size: 150%;
 }
 
 .menu {
     width: 80px;
     height: 100vh;
     border-radius: 6px;
-    border: 2px solid #000000;
+    border: none;
     background-color: #0d0d17;
     position: fixed;
     left: 0;
     top: 0;
+    z-index: 1000; /* Z-index alto para ficar sobreposto */
 }
 
 .menu ul {
@@ -89,53 +56,130 @@ body {
 }
 
 .menu ul li a:hover {
-    background-color: #ffffff;
+    background-color: #0d0d17;
 }
 
 img {
     height: 50px;
     width: auto;
+    border: none;
+    border-radius: 20px;
 }
 
-.scrollable-container {
-    overflow-x: hidden; /* Alterado para hidden para esconder a barra de rolagem */
-    white-space: nowrap;
-    margin: 0 auto; /* Centraliza o contêiner horizontalmente */
-    max-width: 80%; /* Define a largura máxima do contêiner */
-    position: relative; /* Adicionado */
+.container {
+    margin-top: 10%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    margin-left: 6%;
+    gap: 20px;
+    padding: 20px;
 }
 
+#container2{
+    position: absolute;
+    margin-top: 55%;
+    margin-left: -6%;
+}
+h2{
+    margin-left: 6%;
+    color: #ffd738;
+}
 
-.song {
-    display: inline-block;
+.playlist {
+    text-align: center;
+    margin-left: 1%;
+}
+
+.playlist-button {
     width: 200px;
     height: 200px;
-    margin-right: 10px;
-    background-color: #0d0d17;
-    text-align: center;
-    line-height: 200px;
-    font-size: 20px;
-    border: none;
-    border-radius: 18px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 10px;
+    padding: 10px;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
 }
 
-.nomeCatalago {
-    text-align: center;
+.playlist-button img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    cursor: pointer;
+    pointer-events: none; /* Adicionando esta linha */
 }
 
-.scroll-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 40px;
-    height: 40px;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    border: none;
-    border-radius: 50%;
+
+.playlist-button:hover {
+    transform: scale(1.05);
+}
+
+.playlist-button img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
     cursor: pointer;
 }
 
-.scroll-btn:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+.Musicas {
+    text-align: center;
+    margin-left: 1%;
+}
+
+.Musicas-button {
+    width: 200px;
+    height: 200px; /* Ajuste as dimensões conforme necessário */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    overflow: hidden; /* Para garantir que a imagem não vaze do contêiner */
+}
+
+.Musicas-button img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px; /* Ajuste o raio do border-radius conforme necessário */
+    cursor: pointer;
+}
+
+.Musicas-button:hover {
+    transform: scale(1.05);
+}
+
+.Musicas-button img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.scrollable-container {
+    margin: 0 auto; /* Centraliza o contêiner horizontalmente */
+    max-width: 100%; /* Define a largura máxima do contêiner e deixa o conteiner arrastavel(scrollavel) */
+    margin-left: 5%;
+    overflow-x: auto;
+    white-space: nowrap;
+    display: flex;
+    position: relative; /* Adicionado */
+}
+
+#container1, #container2, #container3 {
+    overflow-y: hidden;
+}
+#container1, #container2, #container3 {
+    overflow-x: hidden;
 }
