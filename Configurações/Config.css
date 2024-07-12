@@ -1,11 +1,10 @@
-
 /* Define a fonte padrão para o corpo do documento, removendo margens e preenchimentos. 
    Define a cor de fundo e a cor do texto padrão. Usa grid para o layout. */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #12121b; 
+    background-color: #12121b;
     color: #fff;
     display: grid;
     user-select: none;
@@ -17,10 +16,12 @@ body {
     width: 400px;
     margin: 50px auto;
     padding: 20px;
-    background-color: #20212c; 
+    background-color: #20212c;
     border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3), /* Sombra existente */
-                0 0 20px 10px rgba(255, 220, 80, 0.7); /* Luz amarela */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3),
+        /* Sombra existente */
+        0 0 20px 10px rgba(255, 220, 80, 0.7);
+    /* Luz amarela */
     text-align: center;
 }
 
@@ -57,13 +58,15 @@ body {
 .profile-info input,
 .profile-info textarea,
 .profile-info select {
-    width: calc(100% - 120px); /* Define a largura considerando a largura da imagem e a margem. */
+    width: calc(100% - 120px);
+    /* Define a largura considerando a largura da imagem e a margem. */
     padding: 10px;
     border: 1px solid #333;
     border-radius: 5px;
     color: #fff;
     background-color: #333;
-    margin-left: 20px; /* Garante que todas as caixas de texto estejam alinhadas. */
+    margin-left: 20px;
+    /* Garante que todas as caixas de texto estejam alinhadas. */
 }
 
 /* Oculta o input de arquivo, pois será estilizado de outra maneira. */
@@ -84,6 +87,7 @@ body {
     cursor: pointer;
     margin: 10px 0;
 }
+
 /* Define a cor de fundo específica para o botão de exclusão de conta. */
 .delete-account-btn {
     background-color: #dd3630;
@@ -99,13 +103,17 @@ body {
 .delete-account-btn:hover {
     background-color: #ff1100;
 }
+
 .save-btn {
-    margin-right: 30px; /* Adiciona margem direita de 15px ao botão Salvar Configurações */
+    margin-right: 30px;
+    /* Adiciona margem direita de 15px ao botão Salvar Configurações */
     width: 170px;
     color: black;
-    box-shadow: 0 0 10px 5px rgba(255, 220, 80, 0.3);;
+    box-shadow: 0 0 10px 5px rgba(255, 220, 80, 0.3);
+    ;
 }
-.delete-account-btn{
+
+.delete-account-btn {
     width: 170px;
     color: black;
     box-shadow: 0 0 10px 5px rgba(255, 0, 0, 0.3);
@@ -114,7 +122,7 @@ body {
 
 /* Define o estilo para o menu lateral, incluindo largura, altura, bordas arredondadas, 
    cor de fundo, posição fixa e alinhamento. */
-   .menu {
+.menu {
     width: 80px;
     height: 100vh;
     border-radius: 6px;
@@ -159,7 +167,7 @@ img {
         margin: 20px auto;
         padding: 10px;
     }
-    
+
     .profile-info {
         flex-direction: column;
         align-items: flex-start;
@@ -208,29 +216,32 @@ img {
         height: 30px;
         width: auto;
     }
+
     body {
         font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;
-        background-color: #12121b; 
+        background-color: #12121b;
         color: #fff;
         display: grid;
         user-select: none;
     }
-    
+
     /* Estiliza o contêiner principal, definindo largura, margens, preenchimento, cor de fundo, 
        bordas arredondadas, sombras e alinhamento de texto. */
     .container {
         width: 400px;
         margin: 50px auto;
         padding: 20px;
-        background-color: #20212c; 
+        background-color: #20212c;
         border-radius: 10px;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.3), /* Sombra existente */
-                    0 0 20px 10px rgba(255, 220, 80, 0.7); /* Luz amarela */
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.3),
+            /* Sombra existente */
+            0 0 20px 10px rgba(255, 220, 80, 0.7);
+        /* Luz amarela */
         text-align: center;
     }
-    
+
     /* Define o layout das seções de informações do perfil, usando flexbox para alinhamento, 
        margens inferiores e preenchimento. Adiciona uma borda inferior. */
     .profile-info {
@@ -241,7 +252,7 @@ img {
         padding: 10px;
         border-bottom: 1px solid #333;
     }
-    
+
     /* Define as propriedades de imagem para a foto do perfil, incluindo largura, altura, 
        bordas arredondadas e margens à direita. */
     .profile-info img {
@@ -250,7 +261,7 @@ img {
         border-radius: 50%;
         margin-right: 20px;
     }
-    
+
     /* Define o estilo para as etiquetas dentro das seções de informações do perfil, 
        fazendo-as crescer para preencher o espaço disponível e alinhar o texto à esquerda. */
     .profile-info label {
@@ -258,26 +269,28 @@ img {
         flex-grow: 1;
         text-align: left;
     }
-    
+
     /* Define o estilo para inputs, textareas e selects nas seções de informações do perfil, 
        incluindo largura, preenchimento, bordas, cores de fundo e texto, e margens à esquerda. */
     .profile-info input,
     .profile-info textarea,
     .profile-info select {
-        width: calc(100% - 120px); /* Define a largura considerando a largura da imagem e a margem. */
+        width: calc(100% - 120px);
+        /* Define a largura considerando a largura da imagem e a margem. */
         padding: 10px;
         border: 1px solid #333;
         border-radius: 5px;
         color: #fff;
         background-color: #333;
-        margin-left: 20px; /* Garante que todas as caixas de texto estejam alinhadas. */
+        margin-left: 20px;
+        /* Garante que todas as caixas de texto estejam alinhadas. */
     }
-    
+
     /* Oculta o input de arquivo, pois será estilizado de outra maneira. */
     .profile-info input[type="file"] {
         display: none;
     }
-    
+
     /* Define o estilo para botões de alteração de foto, exclusão de conta e salvamento de configurações,
        incluindo cor de fundo, cor do texto, bordas, preenchimento, bordas arredondadas, cursor e margens. */
     .change-photo-btn,
@@ -291,36 +304,41 @@ img {
         cursor: pointer;
         margin: 10px 0;
     }
+
     /* Define a cor de fundo específica para o botão de exclusão de conta. */
     .delete-account-btn {
         background-color: #dd3630;
     }
-    
+
     /* Define os estilos para os botões ao passar o mouse sobre eles, alterando a cor de fundo. */
     .change-photo-btn:hover,
     .save-btn:hover,
     .delete-account-btn:hover {
         background-color: #e6b50e;
     }
-    
+
     .delete-account-btn:hover {
         background-color: #ff1100;
     }
+
     .save-btn {
-        margin-right: 30px; /* Adiciona margem direita de 15px ao botão Salvar Configurações */
+        margin-right: 30px;
+        /* Adiciona margem direita de 15px ao botão Salvar Configurações */
         width: 170px;
         color: black;
-        box-shadow: 0 0 10px 5px rgba(255, 220, 80, 0.3);;
+        box-shadow: 0 0 10px 5px rgba(255, 220, 80, 0.3);
+        ;
     }
-    .delete-account-btn{
+
+    .delete-account-btn {
         width: 170px;
         color: black;
         box-shadow: 0 0 10px 5px rgba(255, 0, 0, 0.3);
     }
-    
+
     /* Define o estilo para o menu lateral, incluindo largura, altura, bordas arredondadas, 
        cor de fundo, posição fixa e alinhamento. */
-       .menu {
+    .menu {
         width: 80px;
         height: 100vh;
         border-radius: 6px;
@@ -329,43 +347,44 @@ img {
         left: 0;
         top: 0;
     }
-    
+
     .menu ul {
         list-style: none;
         padding: 0;
         margin: 0;
     }
-    
+
     .menu ul li {
         padding: 10px;
         border-bottom: 1px solid #ffdf60;
     }
-    
+
     .menu ul li a {
         color: #fff;
         text-decoration: none;
         display: block;
     }
-    
+
     .menu ul li a:hover {
         background-color: #0d0d17;
     }
-    
+
     img {
         height: 50px;
         width: auto;
         border: none;
         border-radius: 20px;
     }
-    
+
 }
+
 /* Define a fonte padrão para o corpo do documento, removendo margens e preenchimentos. 
    Define a cor de fundo e a cor do texto padrão. Usa grid para o layout. */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #12121b; 
+    background-color: #12121b;
     color: #fff;
     display: grid;
     user-select: none;
@@ -377,10 +396,12 @@ body {
     width: 400px;
     margin: 50px auto;
     padding: 20px;
-    background-color: #20212c; 
+    background-color: #20212c;
     border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3), /* Sombra existente */
-                0 0 20px 10px rgba(255, 220, 80, 0.7); /* Luz amarela */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3),
+        /* Sombra existente */
+        0 0 20px 10px rgba(255, 220, 80, 0.7);
+    /* Luz amarela */
     text-align: center;
 }
 
@@ -417,13 +438,15 @@ body {
 .profile-info input,
 .profile-info textarea,
 .profile-info select {
-    width: calc(100% - 120px); /* Define a largura considerando a largura da imagem e a margem. */
+    width: calc(100% - 120px);
+    /* Define a largura considerando a largura da imagem e a margem. */
     padding: 10px;
     border: 1px solid #333;
     border-radius: 5px;
     color: #fff;
     background-color: #333;
-    margin-left: 20px; /* Garante que todas as caixas de texto estejam alinhadas. */
+    margin-left: 20px;
+    /* Garante que todas as caixas de texto estejam alinhadas. */
 }
 
 /* Oculta o input de arquivo, pois será estilizado de outra maneira. */
@@ -444,6 +467,7 @@ body {
     cursor: pointer;
     margin: 10px 0;
 }
+
 /* Define a cor de fundo específica para o botão de exclusão de conta. */
 .delete-account-btn {
     background-color: #dd3630;
@@ -459,13 +483,17 @@ body {
 .delete-account-btn:hover {
     background-color: #ff1100;
 }
+
 .save-btn {
-    margin-right: 30px; /* Adiciona margem direita de 15px ao botão Salvar Configurações */
+    margin-right: 30px;
+    /* Adiciona margem direita de 15px ao botão Salvar Configurações */
     width: 170px;
     color: black;
-    box-shadow: 0 0 10px 5px rgba(255, 220, 80, 0.3);;
+    box-shadow: 0 0 10px 5px rgba(255, 220, 80, 0.3);
+    ;
 }
-.delete-account-btn{
+
+.delete-account-btn {
     width: 170px;
     color: black;
     box-shadow: 0 0 10px 5px rgba(255, 0, 0, 0.3);
@@ -474,7 +502,7 @@ body {
 
 /* Define o estilo para o menu lateral, incluindo largura, altura, bordas arredondadas, 
    cor de fundo, posição fixa e alinhamento. */
-   .menu {
+.menu {
     width: 80px;
     height: 100vh;
     border-radius: 6px;
