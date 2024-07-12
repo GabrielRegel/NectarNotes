@@ -81,26 +81,6 @@
             localStorage.setItem("password", password);
             localStorage.setItem("country", country);
 
-            // Exemplo de envio para um servidor fictício:
-            fetch('http://exemplo.com/salvarconfiguracoes', {
-                method: 'POST',
-                body: JSON.stringify({ name: name, email: email, bio: bio, password: password, country: country }),
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            })
-            .then(response => {
-                if (response.ok) {
-                    alert('Configurações salvas com sucesso!');
-                } else {
-                    alert('Erro ao salvar configurações. Por favor, tente novamente.');
-                }
-            })
-            .catch(error => {
-                console.error('Erro:', error);
-                alert('Erro ao salvar configurações. Por favor, tente novamente.');
-            });
-        }
 
         // Carregar dados do localStorage ao carregar a página
         document.addEventListener('DOMContentLoaded', function() {
