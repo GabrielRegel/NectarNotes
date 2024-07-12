@@ -28,7 +28,7 @@ h1 {
 
 input[type="text"],
 input[type="password"],
-input[type="submit"] {
+#Login {
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
@@ -37,14 +37,14 @@ input[type="submit"] {
     box-sizing: border-box;
 }
 
-input[type="submit"] {
+#Login {
     background-color: #ffd800; /* Amarelo */
     color: white;
     border: none;
     cursor: pointer;
 }
 
-input[type="submit"]:hover {
+#Login:hover {
     background-color: #ffea00; /* Amarelo mais claro */
 }
 

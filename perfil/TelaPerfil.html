@@ -10,12 +10,12 @@
 <body>
     <div class="menu">
         <ul>
-            <li><a href="../Principal/principal.html" onclick="handleButtonClick('inicio')"><img src="../Principal.png" alt="Botão de Início"></a></li>
-            <li><a href="../perfil/TelaPerfil.html" onclick="handleButtonClick('perfil')"><img src="../Perfil.png" alt="Botão de Perfil"></a></li>
-            <li><a href="../Pesquisa/TelaPesquisa.html" onclick="handleButtonClick('pesquisa')"><img src="../Pesquisa.png" alt="Botão de Pesquisa"></a></li>
-            <li><a href="../Album/MusicasSalvas.html" onclick="handleButtonClick('album')"><img src="../Curtidas.png" alt="Botão de Album"></a></li>
-            <li><a href="../Pets/TelaPets.html" onclick="handleButtonClick('pets')"><img src="../Pets.png" alt="Botão de Pets"></a></li>
-            <li><a href="../Configurações/TelaConfig.html" onclick="handleButtonClick('configuracoes')"><img src="../Configuração.png" alt="Botão de Configurações"></a></li>
+            <li><a href="../Principal/principal.html"><img src="../Principal.png" alt="Botão de Início"></a></li>
+            <li><a href="../perfil/TelaPerfil.html"><img src="../Perfil.png" alt="Botão de Perfil"></a></li>
+            <li><a href="../Pesquisa/TelaPesquisa.html"><img src="../Pesquisa.png" alt="Botão de Pesquisa"></a></li>
+            <li><a href="../Album/MusicasSalvas.html"><img src="../Curtidas.png" alt="Botão de Album"></a></li>
+            <li><a href="../Pets/TelaPets.html"><img src="../Pets.png" alt="Botão de Pets"></a></li>
+            <li><a href="../Configurações/TelaConfig.html"><img src="../Configuração.png" alt="Botão de Configurações"></a></li>
         </ul>
     </div>
     <div class="content">
@@ -23,15 +23,16 @@
             <button onclick="handleBannerImage()">Escolher Imagem de Banner</button>
         </div>
         <div class="profile-picture-container">
-            <img src="../Logo.jpg" alt="Profile Picture" class="profile-picture" onclick="handleProfileImage()">
+            <img src="../Logo.jpg" alt="Profile Picture" class="profile-picture" id="profile-picture" onclick="handleProfileImage()">
         </div>
         <div class="profile-info">
-            <h2 class="username">Uni 723</h2>
+            <h2 class="username"></h2>
             <p class="user-id">@universo723</p>
             <p class="bio">Artes muito legais ai</p>
+            <p class="country"></p>
         </div>
         <div class="tabs">
-            <div class="tab active">MusicasSalvas</div>
+            <div class="tab active">Musicas Salvas</div>
             <div class="tab">Fotos</div>
             <div class="tab">Vídeos</div>
             <div class="tab">Likes</div>
@@ -82,11 +83,38 @@
                 reader.onload = function(readerEvent) {
                     const profilePicture = document.querySelector('.profile-picture');
                     profilePicture.src = readerEvent.target.result;
+
+                    // Salvar a imagem no localStorage
+                    localStorage.setItem('profilePic', readerEvent.target.result);
                 };
                 reader.readAsDataURL(file);
             };
             input.click();
         }
+
+        // Carregar dados do localStorage ao carregar a página de perfil
+        document.addEventListener('DOMContentLoaded', function() {
+            var username = localStorage.getItem('username');
+            var bio = localStorage.getItem('bio');
+            var profilePic = localStorage.getItem('profilePic');
+            var country = localStorage.getItem('country');
+
+            if (username) {
+                document.querySelector('.profile-info .username').textContent = username;
+            }
+            
+            if (bio) {
+                document.querySelector('.profile-info .bio').textContent = bio;
+            }
+
+            if (profilePic) {
+                document.getElementById('profile-picture').src = profilePic;
+            }
+
+            if (country) {
+                document.querySelector('.profile-info .country').textContent = country;
+            }
+        });
     </script>
 </body>
 </html>
