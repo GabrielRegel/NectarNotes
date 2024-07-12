@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +8,8 @@
     <link rel="shortcut icon" type="image/png" href="../Logo.jpg">
     <link rel="stylesheet" href="Perfil.css">
 </head>
+
 <body>
-    <!--Sapoha é so um teste pra branch-->
     <div class="menu">
         <ul>
             <li><a href="../Principal/principal.html"><img src="../Principal.png" alt="Botão de Início"></a></li>
@@ -16,7 +17,8 @@
             <li><a href="../Pesquisa/TelaPesquisa.html"><img src="../Pesquisa.png" alt="Botão de Pesquisa"></a></li>
             <li><a href="../Album/MusicasSalvas.html"><img src="../Curtidas.png" alt="Botão de Album"></a></li>
             <li><a href="../Pets/TelaPets.html"><img src="../Pets.png" alt="Botão de Pets"></a></li>
-            <li><a href="../Configurações/TelaConfig.html"><img src="../Configuração.png" alt="Botão de Configurações"></a></li>
+            <li><a href="../Configurações/TelaConfig.html"><img src="../Configuração.png"
+                        alt="Botão de Configurações"></a></li>
         </ul>
     </div>
     <div class="content">
@@ -24,7 +26,8 @@
             <button onclick="handleBannerImage()">Escolher Imagem de Banner</button>
         </div>
         <div class="profile-picture-container">
-            <img src="../Logo.jpg" alt="Profile Picture" class="profile-picture" id="profile-picture" onclick="handleProfileImage()">
+            <img src="../Logo.jpg" alt="Profile Picture" class="profile-picture" id="profile-picture"
+                onclick="handleProfileImage()">
         </div>
         <div class="profile-info">
             <h2 class="username"></h2>
@@ -61,10 +64,10 @@
             const input = document.createElement('input');
             input.type = 'file';
             input.accept = 'image/*';
-            input.onchange = function(event) {
+            input.onchange = function (event) {
                 const file = event.target.files[0];
                 const reader = new FileReader();
-                reader.onload = function(readerEvent) {
+                reader.onload = function (readerEvent) {
                     const banner = document.querySelector('.banner');
                     banner.style.backgroundImage = `url(${readerEvent.target.result})`;
                     banner.style.backgroundSize = 'cover';
@@ -78,10 +81,10 @@
             const input = document.createElement('input');
             input.type = 'file';
             input.accept = 'image/*';
-            input.onchange = function(event) {
+            input.onchange = function (event) {
                 const file = event.target.files[0];
                 const reader = new FileReader();
-                reader.onload = function(readerEvent) {
+                reader.onload = function (readerEvent) {
                     const profilePicture = document.querySelector('.profile-picture');
                     profilePicture.src = readerEvent.target.result;
 
@@ -94,7 +97,7 @@
         }
 
         // Carregar dados do localStorage ao carregar a página de perfil
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             var username = localStorage.getItem('username');
             var bio = localStorage.getItem('bio');
             var profilePic = localStorage.getItem('profilePic');
@@ -103,7 +106,7 @@
             if (username) {
                 document.querySelector('.profile-info .username').textContent = username;
             }
-            
+
             if (bio) {
                 document.querySelector('.profile-info .bio').textContent = bio;
             }
@@ -118,4 +121,5 @@
         });
     </script>
 </body>
+
 </html>

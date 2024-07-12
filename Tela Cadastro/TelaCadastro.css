@@ -7,10 +7,10 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url(talvez\ tlgd.png);    
-background-size: cover;
-background-position: center;
-background-repeat: no-repeat;
+    background-image: url(talvez\ tlgd.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .signup-container {
@@ -25,12 +25,14 @@ background-repeat: no-repeat;
 }
 
 h1 {
-    color: #333; /* Cinza escuro */
+    color: #333;
+    /* Cinza escuro */
     margin-bottom: 20px;
 }
 
 img {
-    width: 100px; /* Ajuste conforme necessário */
+    width: 100px;
+    /* Ajuste conforme necessário */
     margin-bottom: 20px;
 }
 
@@ -47,14 +49,16 @@ input[type="submit"] {
 }
 
 input[type="submit"] {
-    background-color: #ffd800; /* Amarelo */
+    background-color: #ffd800;
+    /* Amarelo */
     color: white;
     border: none;
     cursor: pointer;
 }
 
 input[type="submit"]:hover {
-    background-color: #ffea00; /* Amarelo mais claro */
+    background-color: #ffea00;
+    /* Amarelo mais claro */
 }
 
 .password-container {
@@ -68,6 +72,7 @@ input[type="submit"]:hover {
         grid-template-rows: auto auto;
         text-align: center;
     }
+
     img {
         margin: auto;
     }
