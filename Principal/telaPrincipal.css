@@ -248,7 +248,7 @@ img {
 .scrollable-container {
     margin: 0 auto;
     /* Centraliza o contêiner horizontalmente */
-    max-width: 100%;
+    max-width: 94%;
     /* Define a largura máxima do contêiner e deixa o conteiner arrastavel(scrollavel) */
     margin-left: 6%;
     overflow-x: auto;
@@ -258,7 +258,41 @@ img {
     /* Adicionado */
 }
 
-
+.CardMusic{
+    background-color:#131722;
+    height: 235px;
+    width: 200px;
+    margin-right:15px; 
+}
+.CardMusic:hover{
+    transform: scale(1.05);
+    transition: transform 0.3s;
+}
+.CapaMusica{
+    -webkit-user-drag: none;
+    height: 180px;
+    width: 180px;
+    margin-left: 4.3%;
+    margin-top: 10px;
+    border-radius: 7px;
+    object-fit: cover; /* Faz a imagem preencher o contêiner mantendo a proporção */
+    object-position: center; /* Centraliza o foco da imagem no meio */    
+}
+.InfMusics{
+    margin-left: 10px;
+    margin-top: -12px;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    font-family: cursive;
+}
+.NomeMusica{
+    font-size: 85%;
+    color: white;
+}
+.NomeArtista{
+    margin-top: -13px;
+    font-size: 80%;
+    color: rgba(163, 163, 163, 0.63);
+}
 .song {
     display: inline-block;
     width: 200px;
@@ -276,9 +310,11 @@ img {
 .nomeCatalago {
     text-align: left;
     margin-left: 6%;
-    font-family: 'Franklin Gothic Heavy';
+    margin-top: -15px;
+    margin-bottom: -20px;
+    font-family: monospace;
     color: #ffd800;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3),
+    text-shadow: 2px 2px 5px #ffd900c7;
 
 }
 
