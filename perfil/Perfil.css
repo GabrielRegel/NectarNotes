@@ -41,12 +41,10 @@
 
      .banner {
          background-color: #fbff00;
-         /* Cor do banner um pouco mais escura */
-         height: 230px;
-         /* Altura do banner */
+         height: 265px;
          position: relative;
          margin-bottom: 20px;
-         /* Espaço entre o banner e o conteúdo */
+         border-bottom: 3px solid #1a1f31;
      }
 
      .profile-picture {
@@ -54,7 +52,7 @@
          height: 100px;
          border-radius: 50%;
          position: absolute;
-         top: 180px;
+         top: 280px;
          /* Ajuste para baixar a foto de perfil */
          left: 100px;
          /* Ajuste para posicionar no canto esquerdo */
@@ -62,12 +60,15 @@
          cursor: pointer;
          /* adiciona cursor pointer para indicar que é clicável */
          background-color: #131722;
+         object-fit: cover; /* Faz a imagem preencher o contêiner mantendo a proporção */
+         object-position: center; /* Centraliza o foco da imagem no meio */ 
+         
      }
 
      .profile-info {
          margin-left: 140px;
          /* Ajuste para alinhar com a foto de perfil */
-         margin-top: 50px;
+         margin-top: 0px;
          /* Ajuste para alinhar com o topo do banner */
          text-align: left;
          /* Alinhamento do texto à esquerda */
@@ -77,18 +78,21 @@
          font-size: 24px;
          font-weight: bold;
          margin-bottom: 5px;
+         font-family: cursive;
      }
 
      .user-id {
-         font-size: 16px;
-         color: #8899a6;
-         /* Cor do texto do ID do usuário */
-     }
+        font-size: 16px;
+        color: #8899a6;
+        margin-top: -5px;
+        font-family: cursive;
+        }
 
      .bio {
          font-size: 18px;
-         margin-top: 10px;
+         margin-top: -16px;
          margin-bottom: 20px;
+         font-family: cursive;
      }
 
      .tabs {
@@ -115,7 +119,7 @@
      .tab.active {
          background-color: #f2e41d;
          /* Cor de fundo da aba ativa */
-         color: #fff;
+         color: black;
          /* Cor do texto na aba ativa */
      }
 
@@ -174,6 +178,4 @@
          width: auto;
      }
 
-     h1 {
-         text-align: center;
-     }
+     
