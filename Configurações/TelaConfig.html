@@ -1,131 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <link rel="shortcut icon" type="image/jpg" href="../Logo.jpg">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Config.css">
-    <title>Configurações</title>
-</head>
-
-<body>
-    <div class="container">
-        <div class="profile-info">
-            <img id="profile-pic" src="default_profile_pic.jpg" alt="Foto de Perfil">
-            <label for="profile-photo" class="change-photo-btn">Trocar Foto</label>
-            <input type="file" id="profile-photo" accept="image/*" onchange="displayProfilePic(this)">
-        </div>
-
-        <div class="profile-info">
-            <label for="profile-name">Nome de Perfil:</label>
-            <input type="text" id="profile-name" class="change-name-input" value="Nome de Usuário"
-                placeholder="Digite seu novo nome de U">
-        </div>
-
-        <div class="profile-info">
-            <label for="profile-email">Email:</label>
-            <input type="email" id="profile-email" class="change-email-input" value="SeuEmail@example.com" readonly>
-        </div>
-
-        <div class="profile-info">
-            <label for="profile-bio">Biografia:</label>
-            <input id="profile-bio" placeholder="Coloque sua biografia aqui"></input>
-        </div>
-
-        <div class="profile-info">
-            <label for="profile-password">Senha:</label>
-            <input type="password" id="profile-password" class="change-password-input" placeholder="Nova senha">
-        </div>
-
-        <div class="profile-info">
-            <label for="profile-country">País:</label>
-            <select id="profile-country" class="change-country-input">
-                <option value="brasil">Brasil</option>
-                <option value="USA">Estados Unidos</option>
-                <option value="França">França</option>
-                <option value="Espanha">Espanha</option>
-                <option value="Alemanha">Alemanha</option>
-                <option value="Reino Unido">Reino Unido</option>
-                <option value="China">China</option>
-            </select>
-        </div>
-
-        <button class="save-btn" onclick="saveSettings()">Salvar Configurações</button>
-
-        <button class="delete-account-btn">Excluir Conta</button>
-    </div>
-
-    <script>
-        function displayProfilePic(input) {
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
-                reader.onload = function (e) {
-                    var profilePic = e.target.result;
-                    document.getElementById('profile-pic').src = profilePic;
-
-                    // Salvar a imagem no localStorage
-                    localStorage.setItem('profilePic', profilePic);
-                };
-                reader.readAsDataURL(input.files[0]);
-            }
-        }
-
-        function saveSettings() {
-            var name = document.getElementById('profile-name').value;
-            var email = document.getElementById('profile-email').value;
-            var bio = document.getElementById('profile-bio').value;
-            var password = document.getElementById('profile-password').value;
-            var country = document.getElementById('profile-country').value;
-
-            // Salvar no localStorage
-            localStorage.setItem("username", name);
-            localStorage.setItem("bio", bio);
-            localStorage.setItem("password", password);
-            localStorage.setItem("country", country);
-
-
-            // Carregar dados do localStorage ao carregar a página
-            document.addEventListener('DOMContentLoaded', function () {
-                var username = localStorage.getItem('username');
-                var password = localStorage.getItem('password');
-                var bio = localStorage.getItem('bio');
-                var profilePic = localStorage.getItem('profilePic');
-                var country = localStorage.getItem('country');
-
-                if (username) {
-                    document.getElementById('profile-name').value = username;
-                }
-
-                if (password) {
-                    document.getElementById('profile-password').value = password;
-                }
-
-                if (bio) {
-                    document.getElementById('profile-bio').value = bio;
-                }
-
-                if (profilePic) {
-                    document.getElementById('profile-pic').src = profilePic;
-                }
-
-                if (country) {
-                    document.getElementById('profile-country').value = country;
-                }
-            });
-    </script>
-
-    <div class="menu">
+    <head>
+        <link rel="shortcut icon" type="image/jpg" href="../Logo.jpg">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="Config.css">
+        <title>Configurações</title>
+    </head>
+    
+    <body>
+        <div class="container">
+            <div class="profile-info">
+                <img id="profile-pic" src="default_profile_pic.jpg" alt="Foto de Perfil">
+                <label for="profile-photo" class="change-photo-btn">Trocar Foto</label>
+                <input type="file" id="profile-photo" accept="image/*" onchange="displayProfilePic(this)">
+            </div>
+            
+      <div class="menu">
         <ul>
-            <li><a href="../Principal/principal.html"><img src="../Principal.png" alt="Botão de Início"></a></li>
-            <li><a href="../perfil/TelaPerfil.html"><img src="../Perfil.png" alt="Botão de Perfil"></a></li>
-            <li><a href="../Pesquisa/TelaPesquisa.html"><img src="../Pesquisa.png" alt="Botão de Pesquisa"></a></li>
-            <li><a href="../Album/MusicasSalvas.html"><img src="../Curtidas.png" alt="Botão de Album"></a></li>
-            <li><a href="../Pets/TelaPets.html"><img src="../Pets.png" alt="Botão de Pets"></a></li>
-            <li><a href="../Configurações/TelaConfig.html"><img src="../Configuração.png"
-                        alt="Botão de Configurações"></a></li>
+            <li><a href="../Principal/principal.html" onclick="handleButtonClick('inicio')"><img src="../Principal.png" alt="Botão de Início"></a></li>
+            <li><a href="../Pesquisa/TelaPesquisa.html" onclick="handleButtonClick('party')"><img src="../party icone.png" alt="Botão de Party"></a></li>
+            <li><a href="../Album/MusicasSalvas.html" onclick="handleButtonClick('album')"><img src="../Curtidas.png" alt="Botão de Album"></a></li>
+            <li><a href="../Pets/TelaPets.html" onclick="handleButtonClick('pets')"><img src="../Pets.png" alt="Botão de Pets"></a></li>
+            <li class="menu-separator"></li> <!-- Linha de separação -->
+            <div class="menu-profile-config">
+                <li><a href="../perfil/TelaPerfil.html" onclick="handleButtonClick('perfil')"><img src="../Perfil.png" alt="Botão de Perfil"></a></li>
+                <li><a href="../Configurações/TelaConfig.html" onclick="handleButtonClick('configuracoes')"><img src="../Configuração.png" alt="Botão de Configurações"></a></li>
+            </div>
         </ul>
     </div>
-</body>
-
+    
+            <div class="profile-info">
+                <label for="profile-name">Nome de Perfil:</label>
+                <input type="text" id="profile-name" class="change-name-input" value="Nome de Usuário"
+                    placeholder="Digite seu novo nome de U">
+            </div>
+    
+            <div class="profile-info">
+                <label for="profile-email">Email:</label>
+                <input type="email" id="profile-email" class="change-email-input" value="SeuEmail@example.com" readonly>
+            </div>
+    
+            <div class="profile-info">
+                <label for="profile-bio">Biografia:</label>
+                <input id="profile-bio" placeholder="Coloque sua biografia aqui"></input>
+            </div>
+    
+            <div class="profile-info">
+                <label for="profile-password">Senha:</label>
+                <input type="password" id="profile-password" class="change-password-input" placeholder="Nova senha">
+            </div>
+    
+            <div class="profile-info">
+                <label for="profile-country">País:</label>
+                <select id="profile-country" class="change-country-input">
+                    <option value="brasil">Brasil</option>
+                    <option value="USA">Estados Unidos</option>
+                    <option value="França">França</option>
+                    <option value="Espanha">Espanha</option>
+                    <option value="Alemanha">Alemanha</option>
+                    <option value="Reino Unido">Reino Unido</option>
+                    <option value="China">China</option>
+                </select>
+            </div>
+    
+            <button class="save-btn" onclick="saveSettings()">Salvar Configurações</button>
+    
+            <button class="delete-account-btn">Excluir Conta</button>
+        </div>
+    
+        <script>
+            function displayProfilePic(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                        var profilePic = e.target.result;
+                        document.getElementById('profile-pic').src = profilePic;
+    
+                        // Salvar a imagem no localStorage
+                        localStorage.setItem('profilePic', profilePic);
+                    };
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+    
+            function saveSettings() {
+                var name = document.getElementById('profile-name').value;
+                var email = document.getElementById('profile-email').value;
+                var bio = document.getElementById('profile-bio').value;
+                var password = document.getElementById('profile-password').value;
+                var country = document.getElementById('profile-country').value;
+    
+                // Salvar no localStorage
+                localStorage.setItem("username", name);
+                localStorage.setItem("bio", bio);
+                localStorage.setItem("password", password);
+                localStorage.setItem("country", country);
+    
+    
+                // Carregar dados do localStorage ao carregar a página
+                document.addEventListener('DOMContentLoaded', function () {
+                    var username = localStorage.getItem('username');
+                    var password = localStorage.getItem('password');
+                    var bio = localStorage.getItem('bio');
+                    var profilePic = localStorage.getItem('profilePic');
+                    var country = localStorage.getItem('country');
+    
+                    if (username) {
+                        document.getElementById('profile-name').value = username;
+                    }
+    
+                    if (password) {
+                        document.getElementById('profile-password').value = password;
+                    }
+    
+                    if (bio) {
+                        document.getElementById('profile-bio').value = bio;
+                    }
+    
+                    if (profilePic) {
+                        document.getElementById('profile-pic').src = profilePic;
+                    }
+    
+                    if (country) {
+                        document.getElementById('profile-country').value = country;
+                    }
+                });
+            }
+        </script>
+    </body>
 </html>
