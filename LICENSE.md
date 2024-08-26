@@ -1,0 +1,1 @@
+NectarNotes © 2 by Gabriel Regel, Gabriel Basso Wanke, João Pedro Lima de Jesus, Leonardo de Lima Ferreira, Gustavo Henrique Ramos Ferri, Heitor Gabriel Pessoa Ferreira, Bernardo Breda Rodrigues is licensed under CC BY-NC-ND 4.0 
