@@ -1,224 +1,218 @@
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #131722;
-    color: white;
-    margin: 0;
-    font-family: Arial, sans-serif;
-    user-select: none;
+/* Estilos para a scrollbar */
+::-webkit-scrollbar {
+    width: 12px;
 }
 
-header {
-    display: flex;
-    height: 250px;
-    width: 100%;
-    background-color: #ffd738;
-    box-shadow: 0 0 110px rgba(255, 230, 37, 0.66);
-    position: absolute;
-    margin-top: -34%;
-    border: 3px solid black;
-    justify-content: center;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    color: black;
-    text-shadow: 0 0 30px rgb(0, 0, 0);
-    font-size: 150%;
+::-webkit-scrollbar-track {
+    background: #0d0d14;
 }
+
+::-webkit-scrollbar-thumb {
+    background: #1c1e2c;
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #191a25;
+}
+
+/* Corpo da página */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #131722;
+    color: #ffffff;
+    display: flex;
+}
+
+/* Menu lateral */
 .menu {
     width: 80px;
     height: 100vh;
     border-radius: 6px;
-    border: none;
     background-color: #0d0d17;
     position: fixed;
     left: 0;
     top: 0;
-    z-index: 1000;
-    /* Z-index alto para ficar sobreposto */
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 20px; /* Espaçamento superior */
+    padding-top: 20px;
 }
 
 .menu ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    flex: 1; /* Faz a lista ocupar o espaço restante */
+    flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Espaça os ícones igualmente */
+    justify-content: space-between;
 }
 
 .menu ul li {
     padding: 10px;
-  
 }
 
 .menu ul li a {
     color: #fff;
     text-decoration: none;
     display: block;
-    text-align: center; /* Centraliza o ícone */
-    border-radius: 50%; /* Adiciona borda redonda */
-    background-color: #1a1e30; /* Cor de fundo para combinar com o site */
-    width: 60px; /* Tamanho do círculo */
-    height: 60px; /* Tamanho do círculo */
+    text-align: center;
+    border-radius: 50%;
+    background-color: #1a1e30;
+    width: 60px;
+    height: 60px;
     display: flex;
     align-items: center;
-    justify-content: center; /* Centraliza o ícone dentro do círculo */
+    justify-content: center;
+    transition: background-color 0.3s;
+}
+
+.menu ul li a:hover {
+    background-color: #2a2f3d;
 }
 
 .menu ul li a img {
-    height: 40px; /* Tamanho do ícone */
+    height: 40px;
     width: auto;
 }
-
-
 
 .menu-profile-config {
     display: flex;
     flex-direction: column;
-    margin-top: auto; /* Move os ícones para o final do menu */
-    padding-bottom: 20px; /* Espaço abaixo */
+    margin-top: auto;
+    padding-bottom: 20px;
 }
 
-img {
-    height: 50px;
-    width: auto;
-    border: none;
-    border-radius: 20px;
-}
-
-.container {
-    margin-top: 10%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: left;
-    margin-left: 6%;
-    gap: 20px;
+/* Ajuste a margem do conteúdo para alinhar as playlists à esquerda do site */
+.content {
+    margin-left: 120px; /* Aumente conforme necessário para criar distância do menu */
     padding: 20px;
+    width: calc(100% - 120px); /* Ajuste a largura do conteúdo para compensar a margem */
 }
 
-#container2 {
-    position: absolute;
-    margin-top: 55%;
-    margin-left: -6%;
-}
-
-h2 {
-    margin-left: 6%;
-    color: #ffd738;
-}
-
-.playlist {
-    text-align: center;
-    margin-left: 1%;
-}
-
-.playlist-button {
-    width: 200px;
-    height: 200px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 10px;
-    padding: 10px;
-    background-color: #fff;
-    border: 2px solid #ccc;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s;
-}
-
-.playlist-button img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 5px;
-    cursor: pointer;
-    pointer-events: none;
-    /* Adicionando esta linha */
-}
-
-
-.playlist-button:hover {
-    transform: scale(1.05);
-}
-
-.playlist-button img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.Musicas {
-    text-align: center;
-    margin-left: 1%;
-}
-
-.Musicas-button {
-    width: 200px;
-    height: 200px;
-    /* Ajuste as dimensões conforme necessário */
+/* Container de playlists */
+.playlist-container {
     display: flex;
+    flex-direction: column; /* Alinha os itens verticalmente */
+    align-items: flex-start; /* Alinha os itens à esquerda do contêiner */
+    gap: 15px; /* Espaço entre os itens */
+    margin-left: 20px; /* Adiciona um pouco de espaço à esquerda dos itens de playlist */
+}
+
+/* Cabeçalho */
+.header {
+    background-color: #161b25;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    font-size: 40px; /* Aumente o tamanho da fonte conforme necessário */
+    margin: 0;
+}
+
+
+/* Itens de playlists */
+.playlist-item {
+    width: 200px; /* Aumente a largura dos itens das playlists */
+    height: 200px; /* Aumente a altura dos itens das playlists */
+    background-color: #2a2f3d;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #fff;
-    border: 2px solid #ccc;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s;
-    overflow: hidden;
-    /* Para garantir que a imagem não vaze do contêiner */
 }
 
-.Musicas-button img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 10px;
-    /* Ajuste o raio do border-radius conforme necessário */
-    cursor: pointer;
-}
-
-.Musicas-button:hover {
+.playlist-item:hover {
     transform: scale(1.05);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-.Musicas-button img {
+.playlist-cover {
+    width: 100%;
+    height: 70%; /* Ajuste para dar mais espaço para as capas das músicas */
+    object-fit: cover;
+}
+
+.music-covers {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Duas colunas */
+    grid-template-rows: repeat(2, 1fr); /* Duas linhas */
+    gap: 5px;
+    width: 100%;
+    height: 100%; /* Ajuste conforme necessário para preencher o item da playlist */
+    padding: 5px;
+}
+
+/* Capas das músicas */
+.music-cover {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 5px;
-    cursor: pointer;
+    border-radius: 4px;
 }
 
-.scrollable-container {
-    margin: 0 auto;
-    /* Centraliza o contêiner horizontalmente */
-    max-width: 100%;
-    /* Define a largura máxima do contêiner e deixa o conteiner arrastavel(scrollavel) */
-    margin-left: 5%;
-    overflow-x: auto;
-    white-space: nowrap;
-    display: flex;
-    position: relative;
-    /* Adicionado */
+/* Título da playlist */
+.playlist-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    font-size: 16px;
+    color: #ffffff;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 0 0 8px 8px;
+    text-align: center;
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 900; /* Deve estar abaixo do painel lateral */
 }
 
-#container1,
-#container2,
-#container3 {
-    overflow-y: hidden;
+/* Painel lateral */
+.side-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 500px;
+    height: 100%;
+    background-color: #1a1e30;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    padding: 20px;
+    overflow-y: auto;
+    color: #fff;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
 }
 
-#container1,
-#container2,
-#container3 {
-    overflow-x: hidden;
+.side-panel.show {
+    transform: translateX(0);
+}
+
+.overlay.show {
+    transform: translateX(0);
+}
+
+/* Ajuste no estilo das músicas */
+#playlist-music-list {
+    margin-top: 40px;
 }
