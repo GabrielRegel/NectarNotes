@@ -154,3 +154,67 @@ button:hover {
     border-radius: 20px;
     outline: none;
 }
+.under-construction {
+    display: flex;
+    flex-direction: column; /* Organiza o conteúdo em coluna */
+    align-items: center;
+    justify-content: center;
+    height: 80vh; /* Ajuste conforme necessário */
+    background-color: #0d0d17;
+    color: #ffd800;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    margin: 20px auto;
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.under-construction h1, .under-construction p {
+    opacity: 0; /* Começa invisível */
+    animation: fadeIn 2s ease-in-out forwards; /* Mantém o estado final da animação */
+}
+
+.under-construction h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease-in-out forwards;
+    animation-delay: 0s; /* Tempo de atraso para o fade-in do título */
+}
+
+.under-construction p {
+    font-size: 1.2rem;
+    margin-bottom: 40px; /* Aumenta o espaço abaixo do texto */
+    animation: fadeIn 2s ease-in-out forwards;
+    animation-delay: 0.5s; /* Tempo de atraso para o fade-in do parágrafo */
+}
+
+.animation-wrapper {
+    margin-top: auto; /* Garante que o ícone fique abaixo do texto */
+    display: flex;
+    justify-content: center;
+}
+
+.construction-icon {
+    font-size: 6rem; /* Ajuste conforme necessário */
+    animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
