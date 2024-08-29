@@ -1,180 +1,171 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playlists</title>
+    <link rel="shortcut icon" type="image/png" href="../Logo.jpg">
     <link rel="stylesheet" href="MusicasSalvas.css">
-    <title>Playlists Salvas</title>
 </head>
-
 <body>
-
-    <header>
-        <h1>Suas Playlists e Musicas Favoritas</h1>
-    </header>
-
     <div class="menu">
         <ul>
-            <li><a href="../Principal/principal.html" onclick="handleButtonClick('inicio')"><img src="../Principal.png"
-                        alt="Botão de Início"></a></li>
-            <li><a href="../perfil/TelaPerfil.html" onclick="handleButtonClick('perfil')"><img src="../Perfil.png"
-                        alt="Botão de Perfil"></a></li>
-            <li><a href="../Pesquisa/TelaPesquisa.html" onclick="handleButtonClick('pesquisa')"><img
-                        src="../Pesquisa.png" alt="Botão de Pesquisa"></a></li>
-            <li><a href="../Album/MusicasSalvas.html" onclick="handleButtonClick('album')"><img src="../Curtidas.png"
-                        alt="Botão de Album"></a></li>
-            <li><a href="../Pets/TelaPets.html" onclick="handleButtonClick('pets')"><img src="../Pets.png"
-                        alt="Botão de Pets"></a></li>
-            <li><a href="../Configurações/TelaConfig.html" onclick="handleButtonClick('configuracoes')"><img
-                        src="../Configuração.png" alt="Botão de Configurações"></a></li>
+            <li><a href="../Principal/principal.html" onclick="handleButtonClick('inicio')"><img src="../Principal.png" alt="Botão de Início"></a></li>
+            <li><a href="../Pesquisa/TelaPesquisa.html" onclick="handleButtonClick('party')"><img src="../party icone.png" alt="Botão de Party"></a></li>
+            <li><a href="../Album/MusicasSalvas.html" onclick="handleButtonClick('album')"><img src="../Curtidas.png" alt="Botão de Album"></a></li>
+            <li><a href="../Pets/TelaPets.html" onclick="handleButtonClick('pets')"><img src="../Pets.png" alt="Botão de Pets"></a></li>
+            <li class="menu-separator"></li>
+            <div class="menu-profile-config">
+                <li><a href="../perfil/TelaPerfil.html" onclick="handleButtonClick('perfil')"><img src="../Perfil.png" alt="Botão de Perfil"></a></li>
+                <li><a href="../Configurações/TelaConfig.html" onclick="handleButtonClick('configuracoes')"><img src="../Configuração.png" alt="Botão de Configurações"></a></li>
+            </div>
         </ul>
     </div>
-
-    <div class="container">
-        <h2>Playlists Salvas</h2>
-        <div class="scrollable-container" id="container1">
-            <div class="playlist">
-                <div class="playlist-button">
-                    <img src="../Capas/CapaMusica01.jpg" alt="">
-                    <img src="../Capas/CapaMusica02.jpg" alt="">
-                    <img src="../Capas/CapaMusica03.jpg" alt="">
-                    <img src="../Capas/CapaMusica04.jpg" alt="">
-
+    <div class="content">
+        <header class="header">
+            <h1>Playlists Salvas</h1>
+        </header>
+        <div class="playlist-container">
+            <div class="playlist-item">
+                <div class="music-covers">
+                    <img src="../Capas/Capa12.jpg" alt="Capa da Música 1" class="music-cover">
+                    <img src="../Capas/Capa11.jpg" alt="Capa da Música 2" class="music-cover">
+                    <img src="../Capas/capa24.jpg" alt="Capa da Música 3" class="music-cover">
+                    <img src="../Capas/Capa07.jpg" alt="Capa da Música 4" class="music-cover">
                 </div>
-                <p><b>Playlist 1</b></p>
-                <p>Autor: Autor da Playlist 1</p>
+                <p class="playlist-title">Nome da Playlist 1</p>
             </div>
-
-            <div class="playlist">
-                <div class="playlist-button">
-                    <img src="../Capas/CapaMusica05.jpg" alt="">
-                    <img src="../Capas/CapaMusica06.jpg" alt="">
-                    <img src="../Capas/CapaMusica07.jpg" alt="">
-                    <img src="../Capas/CapaMusica08.jpg" alt="">
+            <div class="playlist-item">
+                <div class="music-covers">
+                    <img src="../Capas/Capa30.jpg" alt="Capa da Música 1" class="music-cover">
+                    <img src="../Capas/Capa29.jpg" alt="Capa da Música 2" class="music-cover">
+                    <img src="../Capas/Capa28.png" alt="Capa da Música 3" class="music-cover">
+                    <img src="../Capas/Capa27.jpg" alt="Capa da Música 4" class="music-cover">
                 </div>
-                <p><b>Playlist 1</b></p>
-                <p>Autor: Autor da Playlist 1</p>
+                <p class="playlist-title">Nome da Playlist 1</p>
             </div>
-
-            <div class="playlist">
-                <div class="playlist-button">
-                    <img src="../Capas/CapaMusica09.jpg" alt="">
-                    <img src="../Capas/CapaMusica10.jpg" alt="">
-                    <img src="../Capas/capa de musica 11.jpg" alt="">
-                    <img src="../Capas/capa de musica 12.jpg" alt="">
+            <div class="playlist-item">
+                <div class="music-covers">
+                    <img src="../Capas/Capa26.jpg" alt="Capa da Música 1" class="music-cover">
+                    <img src="../Capas/Capa25.jpg" alt="Capa da Música 2" class="music-cover">
+                    <img src="../Capas/capa23.jpg" alt="Capa da Música 3" class="music-cover">
+                    <img src="../Capas/Capa22.jpg" alt="Capa da Música 4" class="music-cover">
                 </div>
-                <p><b>Playlist 1</b></p>
-                <p>Autor: Autor da Playlist 1</p>
+                <p class="playlist-title">Nome da Playlist 1</p>
             </div>
-
-            <div class="playlist">
-                <div class="playlist-button">
-                    <img src="../Capas/capa de musica 13.jpg" alt="">
-                    <img src="../Capas/capa de musica 14.jpg" alt="">
-                    <img src="../Capas/capa de musica 15.jpg" alt="">
-                    <img src="../Capas/capa16 (2).jpg" alt="">
+            <div class="playlist-item">
+                <div class="music-covers">
+                    <img src="../Capas/Capa14.jpg" alt="Capa da Música 1" class="music-cover">
+                    <img src="../Capas/Capa50.jpg" alt="Capa da Música 2" class="music-cover">
+                    <img src="../Capas/capa49.jpg" alt="Capa da Música 3" class="music-cover">
+                    <img src="../Capas/Capa48.jpg" alt="Capa da Música 4" class="music-cover">
                 </div>
-                <p><b>Playlist 1</b></p>
-                <p>Autor: Autor da Playlist 1</p>
+                <p class="playlist-title">Nome da Playlist 1</p>
             </div>
-
-            <div class="playlist">
-                <div class="playlist-button">
-                    <img src="../Capas/capa17.jpg" alt="">
-                    <img src="../Capas/capa18.jpg" alt="">
-                    <img src="../Capas/capa19.jpg" alt="">
-                    <img src="../Capas/capa20.jpg" alt="">
+            <div class="playlist-item">
+                <div class="music-covers">
+                    <img src="../Capas/Capa47.jpg" alt="Capa da Música 1" class="music-cover">
+                    <img src="../Capas/Capa46.jpg" alt="Capa da Música 2" class="music-cover">
+                    <img src="../Capas/capa45.jpg" alt="Capa da Música 3" class="music-cover">
+                    <img src="../Capas/Capa40.jpg" alt="Capa da Música 4" class="music-cover">
                 </div>
-                <p><b>Playlist 1</b></p>
-                <p>Autor: Autor da Playlist 1</p>
+                <p class="playlist-title">Nome da Playlist 1</p>
             </div>
-
-            <div class="playlist">
-                <div class="playlist-button">
-                    <img src="../Capas/capa21.jpg" alt="">
-                    <img src="../Capas/capa22.jpg" alt="">
-                    <img src="../Capas/capa23.jpg" alt="">
-                    <img src="../Capas/capa24.jpg" alt="">
+            <div class="playlist-item">
+                <div class="music-covers">
+                    <img src="../Capas/Capa25.jpg" alt="Capa da Música 1" class="music-cover">
+                    <img src="../Capas/Capa04.jpg" alt="Capa da Música 2" class="music-cover">
+                    <img src="../Capas/capa08.jpg" alt="Capa da Música 3" class="music-cover">
+                    <img src="../Capas/Capa09.webp" alt="Capa da Música 4" class="music-cover">
                 </div>
-                <p><b>Playlist 1</b></p>
-                <p>Autor: Autor da Playlist 1</p>
+                <p class="playlist-title">Nome da Playlist 1</p>
             </div>
-
-            <div class="playlist">
-                <div class="playlist-button">
-                    <img src="../Capas/capa25.jpg" alt="">
-                    <img src="../Capas/capa26.jpg" alt="">
-                    <img src="../Capas/capa27.jpg" alt="">
-                    <img src="../Capas/capa28.jpg" alt="">
-                </div>
-                <p><b>Playlist 1</b></p>
-                <p>Autor: Autor da Playlist 1</p>
+        </div>  
+        <div id="slide-panel" class="slide-panel">
+            <div class="panel-content">
+                <button onclick="closePanel()" class="close-btn">X</button>
+                <div id="playlist-music-list" class="music-list"></div>
             </div>
         </div>
-    </div>
-    <div id="container2">
-        <div class="container">
-            <h2>Musicas Salvas</h2>
-            <div class="scrollable-container" id="container1">
-                <div class="Musicas">
-                    <div class="Musicas-button">
-                        <img src="../Capas/CapaMusica29.jpg" alt="">
-                    </div>
-                    <p><b>Musica 1</b></p>
-                    <p>Autor: Autor da Musica 1</p>
-                </div>
-
-                <div class="Musicas">
-                    <div class="Musicas-button">
-                        <img src="../Capas/capa41.jpg" alt="">
-                    </div>
-                    <p><b>Musica 1</b></p>
-                    <p>Autor: Autor da Musica 1</p>
-                </div>
-
-                <div class="Musicas">
-                    <div class="Musicas-button">
-                        <img src="CapaMusica03.jpg" alt="">
-                    </div>
-                    <p><b>Musica 1</b></p>
-                    <p>Autor: Autor da Musica 1</p>
-                </div>
-
-                <div class="Musicas">
-                    <div class="Musicas-button">
-                        <img src="CapaMusica04.jpg" alt="">
-                    </div>
-                    <p><b>Musica 1</b></p>
-                    <p>Autor: Autor da Musica 1</p>
-                </div>
-
-                <div class="Musicas">
-                    <div class="Musicas-button">
-                        <img src="CapaMusica01.jpg" alt="">
-                    </div>
-                    <p><b>Musica 1</b></p>
-                    <p>Autor: Autor da Musica 1</p>
-                </div>
-
-                <div class="Musicas">
-                    <div class="Musicas-button">
-                        <img src="CapaMusica02.jpg" alt="">
-                    </div>
-                    <p><b>Musica 1</b></p>
-                    <p>Autor: Autor da Musica 1</p>
-                </div>
-
-                <div class="Musicas">
-                    <div class="Musicas-button">
-                        <img src="CapaMusica03.jpg" alt="">
-                    </div>
-                    <p><b>Musica 1</b></p>
-                    <p>Autor: Autor da Musica 1</p>
-                </div>
+        <div class="side-panel">
+            <button class="close-btn" onclick="closePanel()">X</button>
+            <div id="playlist-music-list">
+                <!-- As músicas da playlist serão adicionadas aqui pelo JavaScript -->
             </div>
         </div>
+        
     </div>
+    
+    <script>
+        function handleButtonClick(buttonId) {
+            // Função para lidar com cliques nos botões do menu
+            console.log(buttonId + ' button clicked');
+        }
+        function handleButtonClick(buttonId) {
+    console.log(buttonId + ' button clicked');
+}
+
+function openPanel(playlist) {
+    const panel = document.querySelector('.side-panel');
+    const playlistMusicList = document.getElementById('playlist-music-list');
+    
+    // Limpe a lista atual
+    playlistMusicList.innerHTML = '';
+    
+    // Adicione as músicas da playlist ao painel (aqui você deve personalizar conforme a estrutura real da playlist)
+    // Exemplo:
+    const musicTitles = ['Música 1', 'Música 2', 'Música 3']; // Substitua com dados reais
+    musicTitles.forEach(title => {
+        const musicItem = document.createElement('div');
+        musicItem.classList.add('music-item');
+        musicItem.textContent = title;
+        playlistMusicList.appendChild(musicItem);
+    });
+    
+    // Mostrar o painel
+    panel.classList.add('show');
+}
+
+function closePanel() {
+    const panel = document.querySelector('.side-panel');
+    panel.classList.remove('show');
+}
+
+// Adicionar eventos de clique aos itens de playlist
+document.querySelectorAll('.playlist-item').forEach(item => {
+    item.addEventListener('click', () => {
+        openPanel(); // Passar dados reais se necessário
+    });
+});
+function handleButtonClick(buttonId) {
+    console.log(buttonId + ' button clicked');
+}
+
+function openPanel() {
+    const panel = document.querySelector('.side-panel');
+    const overlay = document.querySelector('.overlay');
+    
+    // Mostrar o painel e o overlay
+    panel.classList.add('show');
+    overlay.classList.add('show');
+}
+
+function closePanel() {
+    const panel = document.querySelector('.side-panel');
+    const overlay = document.querySelector('.overlay');
+    
+    // Ocultar o painel e o overlay
+    panel.classList.remove('show');
+    overlay.classList.remove('show');
+}
+
+// Adicionar eventos de clique aos itens de playlist
+document.querySelectorAll('.playlist-item').forEach(item => {
+    item.addEventListener('click', () => {
+        openPanel(); // Passar dados reais se necessário
+    });
+});
+
+    </script>
 </body>
-
 </html>

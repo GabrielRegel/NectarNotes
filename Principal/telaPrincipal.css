@@ -318,7 +318,7 @@ img {
     font-size: 80%;
     color: rgba(163, 163, 163, 0.63);
 }
-.song {
+.song    {
     display: inline-block;
     width: 200px;
     height: 200px;
@@ -522,4 +522,13 @@ img {
     .profile-info {
         margin-right: 0;
     }
+}
+/* Adiciona no seu arquivo telaPrincipal.css */
+.CardMusic a {
+    display: block;
+    text-decoration: none;
+}
+
+.CardMusic img {
+    pointer-events: none; /* Impede o arrasto das imagens */
 }
