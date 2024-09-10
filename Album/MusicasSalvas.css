@@ -1,5 +1,5 @@
-/* Estilos para a scrollbar */
-::-webkit-scrollbar {
+ /* Estilos para a scrollbar */
+ ::-webkit-scrollbar {
     width: 12px;
 }
 
@@ -18,19 +18,20 @@
 
 /* Corpo da página */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #131722;
     color: #ffffff;
     display: flex;
+    overflow-x: hidden; /* Impede a rolagem horizontal */
 }
 
 /* Menu lateral */
 .menu {
     width: 80px;
     height: 100vh;
-    border-radius: 6px;
+    border-radius: 12px;
     background-color: #0d0d17;
     position: fixed;
     left: 0;
@@ -39,6 +40,7 @@ body {
     flex-direction: column;
     align-items: center;
     padding-top: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra suave */
 }
 
 .menu ul {
@@ -67,11 +69,12 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 .menu ul li a:hover {
     background-color: #2a2f3d;
+    transform: scale(1.1);
 }
 
 .menu ul li a img {
@@ -88,9 +91,9 @@ body {
 
 /* Ajuste a margem do conteúdo para alinhar as playlists à esquerda do site */
 .content {
-    margin-left: 120px; /* Aumente conforme necessário para criar distância do menu */
+    margin-left: 100px; /* Ajuste para deixar espaço suficiente do menu */
     padding: 20px;
-    width: calc(100% - 120px); /* Ajuste a largura do conteúdo para compensar a margem */
+    width: calc(100% - 100px); /* Ajuste a largura do conteúdo para compensar a margem */
 }
 
 /* Container de playlists */
@@ -98,68 +101,64 @@ body {
     display: flex;
     flex-direction: column; /* Alinha os itens verticalmente */
     align-items: flex-start; /* Alinha os itens à esquerda do contêiner */
-    gap: 15px; /* Espaço entre os itens */
-    margin-left: 20px; /* Adiciona um pouco de espaço à esquerda dos itens de playlist */
+    gap: 20px; /* Espaço maior entre os itens */
+    margin-left: 20px; /* Espaço à esquerda dos itens de playlist */
 }
 
 /* Cabeçalho */
 .header {
     background-color: #161b25;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+    padding: 20px; /* Mais espaço no cabeçalho */
+    border-radius: 12px; /* Bordas mais arredondadas */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra mais suave */
     margin-bottom: 20px;
 }
 
 .header h1 {
-    font-size: 40px; /* Aumente o tamanho da fonte conforme necessário */
+    font-size: 36px; /* Tamanho da fonte ajustado */
     margin: 0;
+    font-weight: 700; /* Negrito no título */
 }
-
 
 /* Itens de playlists */
 .playlist-item {
-    width: 200px; /* Aumente a largura dos itens das playlists */
-    height: 200px; /* Aumente a altura dos itens das playlists */
+    width: 240px; /* Largura aumentada */
+    height: 240px; /* Altura aumentada */
     background-color: #2a2f3d;
-    border-radius: 8px;
+    border-radius: 12px;
     overflow: hidden;
     position: relative;
     cursor: pointer;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s; /* Adiciona transição de cor de fundo */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra suave padrão */
 }
 
 .playlist-item:hover {
     transform: scale(1.05);
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra mais pronunciada */
 }
 
-.playlist-cover {
-    width: 100%;
-    height: 70%; /* Ajuste para dar mais espaço para as capas das músicas */
-    object-fit: cover;
-}
-
+/* Capas das músicas */
 .music-covers {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* Duas colunas */
     grid-template-rows: repeat(2, 1fr); /* Duas linhas */
-    gap: 5px;
+    gap: 5px; /* Espaço menor entre as capas */
     width: 100%;
-    height: 100%; /* Ajuste conforme necessário para preencher o item da playlist */
-    padding: 5px;
+    height: 100%;
+    padding: 5px; /* Menos padding para se ajustar ao grid */
 }
 
-/* Capas das músicas */
 .music-cover {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 4px;
+    border-radius: 8px; /* Bordas mais arredondadas */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra suave nas capas */
 }
 
 /* Título da playlist */
@@ -169,19 +168,22 @@ body {
     left: 0;
     right: 0;
     padding: 10px;
-    font-size: 16px;
+    font-size: 20px; /* Tamanho da fonte aumentado */
+    font-weight: 600; /* Negrito no título */
     color: #ffffff;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 0 0 8px 8px;
+    background: rgba(0, 0, 0, 0.6); /* Fundo um pouco mais opaco */
+    border-radius: 0 0 12px 12px;
     text-align: center;
 }
+
+/* Overlay */
 .overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.8); /* Cor de fundo mais escura */
     transform: translateX(-100%);
     transition: transform 0.3s ease;
     z-index: 900; /* Deve estar abaixo do painel lateral */
@@ -192,7 +194,7 @@ body {
     position: fixed;
     top: 0;
     right: 0;
-    width: 500px;
+    width: 350px; /* Largura reduzida */
     height: 100%;
     background-color: #1a1e30;
     transform: translateX(100%);
@@ -200,7 +202,7 @@ body {
     padding: 20px;
     overflow-y: auto;
     color: #fff;
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3); /* Sombra mais pronunciada */
     z-index: 1000;
 }
 
@@ -212,7 +214,27 @@ body {
     transform: translateX(0);
 }
 
-/* Ajuste no estilo das músicas */
-#playlist-music-list {
-    margin-top: 40px;
+/* Estilo das capas das músicas na vertical */
+.music-cover-vertical {
+    width: 80px; /* Largura menor para melhor visualização vertical */
+    height: auto;
+    border-radius: 8px;
+    margin: 10px 0; /* Espaçamento entre capas */
 }
+
+/* Capa da playlist no painel */
+.playlist-cover {
+    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Duas colunas */
+    grid-template-rows: repeat(2, 1fr); /* Duas linhas */
+    gap: 5px; /* Espaçamento menor entre a      s capas */
+}
+
+.playlist-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
