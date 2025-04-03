@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playlists</title>
+    <link rel="shortcut icon" type="image/png" href="../Logo.jpg">
+    <link rel="stylesheet" href="MusicasSalvas.css">
+</head>
+<body>
+    <div class="menu">
+        <ul>
+            <li><a href="../Principal/principal.html" onclick="handleButtonClick('inicio')"><img src="../Principal.png" alt="Botão de Início"></a></li>
+            <li><a href="../Pesquisa/TelaPesquisa.html" onclick="handleButtonClick('party')"><img src="../party icone.png" alt="Botão de Party"></a></li>
+            <li><a href="../Album/MusicasSalvas.html" onclick="handleButtonClick('album')"><img src="../Curtidas.png" alt="Botão de Album"></a></li>
+            <li><a href="../Pets/TelaPets.html" onclick="handleButtonClick('pets')"><img src="../Pets.png" alt="Botão de Pets"></a></li>
+            <li class="menu-separator"></li> <!-- Linha de separação -->
+            <div class="menu-profile-config">
+                <li><a href="../perfil/TelaPerfil.html" onclick="handleButtonClick('perfil')"><img src="../Perfil.png" alt="Botão de Perfil"></a></li>
+                <li><a href="../Configurações/TelaConfig.html" onclick="handleButtonClick('configuracoes')"><img src="../Configuração.png" alt="Botão de Configurações"></a></li>
+            </div>
+        </ul>
+    </div>
+    <div class="content">
+        <header class="header">
+            <h1>Playlists Salvas</h1>
+        </header>
+        <div class="playlist-container">
+            <!-- Playlist 1 -->
+            <div class="playlist-item" data-playlist-id="1">
+                <div class="music-covers">
+                    <img src="../Capas/Capa12.jpg" alt="Capa da Música 1" class="music-cover">
+                    <img src="../Capas/Capa11.jpg" alt="Capa da Música 2" class="music-cover">
+                    <img src="../Capas/capa24.jpg" alt="Capa da Música 3" class="music-cover">
+                    <img src="../Capas/Capa07.jpg" alt="Capa da Música 4" class="music-cover">
+                </div>
+                <p class="playlist-title">Nome da Playlist 1</p>
+            </div>
+
+            <!-- Playlist 2 -->
+            <div class="playlist-item" data-playlist-id="2">
+                <div class="music-covers">
+                    <img src="../Capas/Capa05.jpg" alt="Capa da Música 5" class="music-cover">
+                    <img src="../Capas/Capa10.jpg" alt="Capa da Música 6" class="music-cover">
+                    <img src="../Capas/Capa13.jpg" alt="Capa da Música 7" class="music-cover">
+                    <img src="../Capas/Capa09.webp" alt="Capa da Música 8" class="music-cover">
+                </div>
+                <p class="playlist-title">Nome da Playlist 2</p>
+            </div>
+
+            <!-- Playlist 3 -->
+            <div class="playlist-item" data-playlist-id="3">
+                <div class="music-covers">
+                    <img src="../Capas/Capa01.webp" alt="Capa da Música 9" class="music-cover">
+                    <img src="../Capas/Capa08.jpg" alt="Capa da Música 10" class="music-cover">
+                    <img src="../Capas/Capa14.jpg" alt="Capa da Música 11" class="music-cover">
+                    <img src="../Capas/Capa04.jpg" alt="Capa da Música 12" class="music-cover">
+                </div>
+                <p class="playlist-title">Nome da Playlist 3</p>
+            </div>
+        </div>
+        <div id="slide-panel" class="side-panel">
+            <button onclick="closePanel()" class="close-btn">X</button>
+            <div id="playlist-music-list" class="music-list"></div>
+        </div>
+        <div class="overlay"></div> 
+<div id="slide-panel" class="side-panel">
+    <button onclick="closePanel()" class="close-btn">X</button>
+    <div id="playlist-info" class="playlist-info">
+        <h2 id="playlist-title">Título da Playlist</h2>
+        <div id="playlist-cover" class="playlist-cover"></div>
+        <div id="playlist-music-list" class="music-list"></div>
+    </div>
+</div>
+    </div>
+    <script>
+        function handleButtonClick(buttonId) {
+            console.log(buttonId + ' button clicked');
+        }
+
+        function openPanel(playlistId) {
+            const panel = document.querySelector('.side-panel');
+            const overlay = document.querySelector('.overlay');
+            const playlistMusicList = document.getElementById('playlist-music-list');
+            const playlistItem = document.querySelector(`.playlist-item[data-playlist-id="${playlistId}"]`);
+            const musicCovers = playlistItem.querySelectorAll('.music-cover');
+            const playlistTitle = playlistItem.querySelector('.playlist-title').textContent;
+
+            // Limpa a lista atual
+            playlistMusicList.innerHTML = '';
+
+            // Cria o elemento da capa da playlist
+            const playlistCoverElement = document.createElement('div');
+            playlistCoverElement.classList.add('playlist-cover');
+            
+            // Usa apenas as 4 primeiras capas para o grid
+            const covers = Array.from(musicCovers).slice(0, 4).map(cover => cover.outerHTML).join('');
+            playlistCoverElement.innerHTML = covers;
+            playlistMusicList.appendChild(playlistCoverElement);
+
+            // Adiciona as capas de música na vertical
+            musicCovers.forEach((cover, index) => {
+                if (index >= 4) { // Ignora as 4 primeiras capas, já exibidas no grid
+                    const musicItem = document.createElement('div');
+                    musicItem.classList.add('music-item');
+                    musicItem.innerHTML = `<img src="${cover.src}" alt="${cover.alt}" class="music-cover-vertical">`;
+                    playlistMusicList.appendChild(musicItem);
+                }
+            });
+
+            // Mostra o painel e o overlay
+            panel.classList.add('show');
+            overlay.classList.add('show');
+        }
+
+        function closePanel() {
+            const panel = document.querySelector('.side-panel');
+            const overlay = document.querySelector('.overlay');
+            panel.classList.remove('show');
+            overlay.classList.remove('show');
+        }
+
+        // Adiciona ouvintes de eventos aos itens de playlist
+        document.querySelectorAll('.playlist-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const playlistId = item.getAttribute('data-playlist-id');
+                openPanel(playlistId);
+            });
+        });
+            
+    </script>
+</body>
+</html>
