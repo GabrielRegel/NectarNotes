@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "codaqui-intranet"
+version = "0.0.1"
+description = "Nothing"
+authors = ["Artumos_Goc <63540372+ArtumosGOC@users.noreply.github.com>"]
+license = "MIT"
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.11"
+Django = "^5.0.4"
+social-auth-app-django = "^5.4.0"
+python-dotenv = "^1.0.1"
+requests = "^2.32.3"
+jwt = "^1.3.1"
+psycopg2-binary = "^2.9.10"
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.4.0"
+pytest = "^8.1.1"
+isort = "^5.13.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

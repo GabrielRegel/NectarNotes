@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados da Busca - NectarNotes</title>
+    <link rel="stylesheet" href="resultado.css">
+    <script src="script.js" defer></script>
+    <link rel="icon" href="../Logo.jpg" type="image/x-icon">
+</head>
+<body>
+    <div class="group">
+        <svg viewBox="0 0 24 24" aria-hidden="true" class="icon">
+            <img id="LupaPesquisa" src="../Pesquisa.png" alt="Lupa">
+        </svg>
+        <input id="searchInput" class="input" type="search" placeholder="Descubra uma colmeia de melodias" />
+    </div>
+    <div class="menu">
+        <ul>
+            <li><a href="../Principal/principal.html" onclick="handleButtonClick('inicio')"><img src="../Principal.png" alt="Botão de Início"></a></li>
+            <li><a href="../Pesquisa/TelaPesquisa.html" onclick="handleButtonClick('party')"><img src="../party icone.png" alt="Botão de Party"></a></li>
+            <li><a href="../Album/MusicasSalvas.html" onclick="handleButtonClick('album')"><img src="../Curtidas.png" alt="Botão de Album"></a></li>
+            <li><a href="../Pets/TelaPets.html" onclick="handleButtonClick('pets')"><img src="../Pets.png" alt="Botão de Pets"></a></li>
+            <li class="menu-separator"></li> <!-- Linha de separação -->
+            <div class="menu-profile-config">
+                <li><a href="../perfil/TelaPerfil.html" onclick="handleButtonClick('perfil')"><img src="../Perfil.png" alt="Botão de Perfil"></a></li>
+                <li><a href="../Configurações/TelaConfig.html" onclick="handleButtonClick('configuracoes')"><img src="../Configuração.png" alt="Botão de Configurações"></a></li>
+            </div>
+        </ul>
+    </div>
+
+    <main>
+        <div class="container">
+            <h1 class="temp">0 Resultados encontrados</h1>
+        </div>
+    </main>
+
+</body>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('searchInput');
+            const clearIcon = document.querySelector('.clear-icon');
+
+            searchInput.addEventListener('keydown', function(event) {
+                if (event.key === 'Enter') {
+                    event.preventDefault(); // Evita o comportamento padrão do Enter
+                    window.location.href = '../pagina dos resultados de pesquisa/resultado.html'; // Redireciona para resultado.html
+                }
+            });
+
+            searchInput.addEventListener('input', function() {
+                clearIcon.style.display = searchInput.value ? 'block' : 'none';
+            });
+
+            clearIcon.addEventListener('click', function() {
+                searchInput.value = '';
+                clearIcon.style.display = 'none';
+                searchInput.focus();
+            });
+        });
+</script>
+</html>

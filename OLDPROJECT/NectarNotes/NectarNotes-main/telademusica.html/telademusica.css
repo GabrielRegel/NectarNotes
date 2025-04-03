@@ -1,0 +1,186 @@
+
+/* Estilos para a scrollbar */
+::-webkit-scrollbar {
+    width: 10px; /* largura da scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: #0d0d14; /* cor de fundo da track */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1c1e2c; /* cor do thumb */
+    border-radius: 10px; /* borda arredondada */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #191a25; /* cor do thumb ao passar o mouse */
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #0f0f18;
+    color: #ffffff;
+    display: grid;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100vh;
+}
+
+.left-side {
+    width: 50%;
+    height: 100%;
+    border-right: 1px solid #34373c; /* cor da borda do Discord */
+}
+
+.right-side {
+    width: 50%;
+    height: 100%;
+    padding: 20px;
+}
+
+.music-info {
+    background-color: #242433;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.music-info ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.music-info li {
+    margin-bottom: 10px;
+}
+
+.music-info strong {
+    color: #fff; /* cor do texto do Discord */
+}
+
+
+.Temp {
+    text-align: center;
+}
+
+#teste {
+    height: 220px;
+    margin-bottom: 100px;
+}
+.menu {
+    width: 80px;
+    height: 100vh;
+    border-radius: 6px;
+    border: none;
+    background-color: #0d0d17;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    /* Z-index alto para ficar sobreposto */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px; /* Espaçamento superior */
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex: 1; /* Faz a lista ocupar o espaço restante */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Espaça os ícones igualmente */
+}
+
+.menu ul li {
+    padding: 10px;
+  
+}
+
+.menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    text-align: center; /* Centraliza o ícone */
+    border-radius: 50%; /* Adiciona borda redonda */
+    background-color: #1a1e30; /* Cor de fundo para combinar com o site */
+    width: 60px; /* Tamanho do círculo */
+    height: 60px; /* Tamanho do círculo */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centraliza o ícone dentro do círculo */
+}
+
+.menu ul li a img {
+    height: 40px; /* Tamanho do ícone */
+    width: auto;
+}
+
+
+
+.menu-profile-config {
+    display: flex;
+    flex-direction: column;
+    margin-top: auto; /* Move os ícones para o final do menu */
+    padding-bottom: 20px; /* Espaço abaixo */
+}
+
+img {
+    height: 50px;
+    width: auto;
+}
+
+.left-side {
+    width: 50%;
+    height: 100%;
+    border-right: 1px solid #34373c;
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+}
+.album {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #161a22; /* Cor de fundo dos blocos do Discord */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    overflow-y: auto; /* Habilita a rolagem vertical */
+    max-height: 500px; /* Altura máxima para a lista */
+}
+h1 {
+    text-align: center;
+}
+.song {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #262a36; /* Cor de fundo dos itens da lista no Discord */
+    border-radius: 5px;
+    display: flex; /* Usando flexbox para organizar os elementos em linha */
+    align-items: center; /* Centralizando verticalmente */
+}
+.song:last-child {
+    margin-bottom: 0;
+}
+.song h2 {
+    margin-top: 0;
+}
+.song p {
+    margin-bottom: 0;
+}
+.album-art {
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+    border-radius: 5px;
+}
