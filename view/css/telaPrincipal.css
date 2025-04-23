@@ -314,7 +314,6 @@ img {
     color: white;
 }
 .NomeArtista{
-    margin-top: -13px;
     font-size: 80%;
     color: rgba(163, 163, 163, 0.63);
 }
@@ -335,12 +334,10 @@ img {
 .nomeCatalago {
     text-align: left;
     margin-left: 6%;
-    margin-top: -15px;
-    margin-bottom: -20px;
-    font-family: monospace;
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* Fonte mais descontraída */
     color: #ffd800;
-    text-shadow: 2px 2px 5px #ffd900c7;
-
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Sombra mais sutil */
+    margin-bottom: 10px; /* Espaçamento inferior */
 }
 
 .scroll-btn:hover {

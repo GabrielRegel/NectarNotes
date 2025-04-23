@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NectarNotes</title>
+    <link rel="stylesheet" href="../../view/css/telaPrincipal.css">
+    <script src="../../view/js/script.js" defer></script>
+    <link rel="icon" href="../../pictures/others/logo.png" type="image/x-icon">
+</head>
+
+<body>
+    <div id="menu-container"></div>
+
+    <header class="header">
+        <div id="parallax-container"></div>
+    </header>
+
+    <div class="nomeCatalago">
+        <h1>Em Alta</h1>
+    </div>
+    <div class="scrollable-container" id="container1"></div>
+
+    <div class="nomeCatalago">
+        <h1>Recomendados</h1>
+    </div>
+    <div class="scrollable-container" id="container2"></div>
+
+    <div class="nomeCatalago">
+        <h1>Ouvidas Recentemente</h1>
+    </div>
+    <div class="scrollable-container" id="container3"></div>
+
+</body>
+<script>
+    // Função para randomizar as capas e o áudio
+    function randomizeMusicCard(cardElement) {
+        const capas = [
+            "Capa01.webp", "Capa02.jpg", "Capa03.jpg", "Capa04.jpg", "Capa05.jpg",
+            "Capa06.jpg", "Capa07.jpg", "Capa08.jpg", "Capa09.webp", "Capa10.jpg",
+            "Capa11.jpg", "Capa12.jpg", "Capa13.jpg", "Capa14.jpg", "Capa15.jpg",
+            "Capa16.jpg", "Capa17.jpg", "Capa18.jpg", "Capa19.jpg", "Capa20.jpg",
+            "Capa21.jpg", "Capa22.jpg", "Capa23.jpg", "Capa24.jpg", "Capa25.jpg",
+            "Capa26.jpg", "Capa27.jpg", "Capa28.png", "Capa29.jpg", "Capa30.jpg",
+            "Capa31.jpg", "Capa32.jpg", "Capa33.jpg", "Capa34.jpg", "Capa35.jpg",
+            "Capa36.jpg", "Capa37.jpg", "Capa38.jpeg", "Capa39.jpg", "Capa40.jpg",
+            "Capa41.jpg", "Capa42.jpg", "Capa43.jpg", "Capa44.jpg", "Capa45.jpg",
+            "Capa46.jpg", "Capa47.jpg", "Capa48.jpg", "Capa49.jpg", "Capa50.jpg"
+            
+
+        ];
+        const audios = [
+            "audio1.mp3"
+        ];
+
+        const randomCapa = capas[Math.floor(Math.random() * capas.length)];
+        cardElement.querySelector(".CapaMusica").src = `../../pictures/Capas/${randomCapa}`;
+
+        const randomAudio = audios[Math.floor(Math.random() * audios.length)];
+        cardElement.querySelector(".AudioMusica source").src = `../../audios/${randomAudio}`;
+        cardElement.querySelector(".AudioMusica").load();
+    }
+
+    // Função para criar um Music Card
+    function createMusicCard(container) {
+        fetch('../../modules/elements/musicCard.html')
+            .then(response => response.text())
+            .then(data => {
+                const cardWrapper = document.createElement('div');
+                cardWrapper.innerHTML = data;
+                container.appendChild(cardWrapper.firstElementChild);
+
+                // Randomizar o conteúdo do card
+                const card = container.lastElementChild;
+                randomizeMusicCard(card);
+
+                // Verificar se a imagem foi carregada corretamente
+                const img = card.querySelector('.CapaMusica');
+                console.log('Imagem carregada:', img.src);
+            })
+            .catch(error => console.error('Erro ao carregar o Music Card:', error));
+    }
+
+    // Função para criar múltiplos Music Cards
+    function populateContainer(containerId, count) {
+        const container = document.getElementById(containerId);
+        for (let i = 0; i < count; i++) {
+            createMusicCard(container);
+        }
+    }
+
+    // Tornar o contêiner arrastável
+    function makeContainerDraggable(container) {
+        let isDragging = false;
+        let startX, scrollLeft;
+
+        container.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            startX = e.pageX - container.offsetLeft;
+            scrollLeft = container.scrollLeft;
+        });
+
+        container.addEventListener('mouseleave', () => {
+            isDragging = false;
+        });
+
+        container.addEventListener('mouseup', () => {
+            isDragging = false;
+        });
+
+        container.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            e.preventDefault();
+            const x = e.pageX - container.offsetLeft;
+            const walk = (x - startX) * 1.7; // Velocidade do arrasto
+            container.scrollLeft = scrollLeft - walk;
+        });
+    }
+
+    // Inicializar os contêineres
+    document.addEventListener('DOMContentLoaded', () => {
+        const containers = [
+            { id: 'container1', count: 10 },
+            { id: 'container2', count: 8 },
+            { id: 'container3', count: 12 }
+        ];
+
+        containers.forEach(({ id, count }) => {
+            populateContainer(id, count);
+            makeContainerDraggable(document.getElementById(id));
+        });
+    });
+
+    document.addEventListener('scroll', function () {
+        let scrollPosition = window.scrollY;
+
+        // Ajuste o valor do parallax conforme necessário para cada camada
+        document.querySelector('.layer1').style.transform = `translateY(${scrollPosition * 0.4}px)`;
+        document.querySelector('.layer2').style.transform = `translateY(${scrollPosition * 0.2}px)`;
+        document.querySelector('.layer3').style.transform = `translateY(${scrollPosition * 0.1}px)`;
+        document.querySelector('.layer4').style.transform = `translateY(${scrollPosition * 0.3}px)`;
+    });
+
+    document.querySelectorAll('.CardMusic').forEach(card => {
+        card.addEventListener('dragstart', event => {
+            event.preventDefault();
+        });
+    });
+
+    const container1 = document.getElementById('container1');
+    const container2 = document.getElementById('container2');
+    const container3 = document.getElementById('container3');
+    let pressionado = false;
+    let inicioX, scrollEsquerda;
+
+    function handleDrag(container) {
+        container.addEventListener('mousedown', (e) => {
+            pressionado = true;
+            inicioX = e.pageX - container.offsetLeft;
+            scrollEsquerda = container.scrollLeft;
+        });
+
+        container.addEventListener('mouseleave', () => {
+            pressionado = false;
+        });
+
+        container.addEventListener('mouseup', () => {
+            pressionado = false;
+        });
+
+        container.addEventListener('mousemove', (e) => {
+            if (!pressionado) return;
+            e.preventDefault();
+            const x = e.pageX - container.offsetLeft;
+            const andar = (x - inicioX) * 1.7;
+            container.scrollLeft = scrollEsquerda - andar;
+        });
+    }
+
+    handleDrag(container1);
+    handleDrag(container2);
+    handleDrag(container3);
+    function avancar(container) {
+        const scrollQuantidade = 200; // Altere conforme necessário
+        container.scrollLeft += scrollQuantidade;
+    }
+
+    function retroceder(container) {
+        const scrollQuantidade = 199; // Altere conforme necessário
+        container.scrollLeft -= scrollQuantidade;
+    }
+
+    // Importar o menu do módulo
+    fetch('../../modules/elements/menu.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('menu-container').innerHTML = data;
+        })
+        .catch(error => console.error('Erro ao carregar o menu:', error));
+
+    // Importar o parallax do módulo
+    fetch('../../modules/elements/paralax.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('parallax-container').innerHTML = data;
+        })
+        .catch(error => console.error('Erro ao carregar o parallax:', error));
+
+    async function fetchFilesFromDirectory(directory) {
+        try {
+            const response = await fetch(`../../${directory}`);
+            if (!response.ok) {
+                throw new Error(`Erro ao acessar o diretório: ${directory}`);
+            }
+            const files = await response.json(); // Supondo que o servidor retorne uma lista de arquivos em JSON
+            return files;
+        } catch (error) {
+            console.error(`Erro ao buscar arquivos do diretório ${directory}:`, error);
+            return [];
+        }
+    }
+
+    async function fetchCapas() {
+        try {
+            const response = await fetch('../../controller/php/getCapas.php');
+            if (!response.ok) {
+                throw new Error('Erro ao buscar capas');
+            }
+            const capas = await response.json();
+            console.log('Capas:', capas);
+
+            // Agora você pode usar o array `capas` no restante do código
+            return capas;
+        } catch (error) {
+            console.error('Erro ao buscar capas:', error);
+            return [];
+        }
+    }
+
+    async function initializeArrays() {
+        const capas = await fetchCapas();
+        const audios = []; // Adicione lógica para buscar áudios, se necessário
+
+        console.log('Capas:', capas);
+        console.log('Áudios:', audios);
+
+        // Use os arrays `capas` e `audios` no restante do código
+    }
+
+    initializeArrays();
+</script>
+</html>
