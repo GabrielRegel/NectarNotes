@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil</title>
+    <link rel="shortcut icon" type="image/png" href="../Logo.jpg">
+    <link rel="stylesheet" href="../css/Perfil.css">
+</head>
+
+<body>
+    <!-- Menu Lateral Importado -->
+    <div id="menu-container"></div>
+
+    <div class="content">
+        <!-- Banner -->
+        <div class="banner">
+            <img src="../../pictures/icons/camera.png" alt="Escolher Imagem de Banner" class="banner-button" onclick="handleBannerImage()">
+        </div>
+
+        <!-- Informações do Perfil -->
+        <div class="profile-container">
+            <div class="profile-picture-container">
+                <img src="../../pictures/others/logo.png" alt="Profile Picture" class="profile-picture" id="profile-picture"
+                    onclick="handleProfileImage()">
+            </div>
+            <div class="profile-info">
+                <h1 class="username">Nome do Usuário</h1>
+                <p class="bio">Aqui está a bio do usuário</p>
+                <p class="country">Localização do Usuário</p>
+            </div>
+        </div>
+
+        <!-- Abas -->
+        <div class="tabs">
+            <div class="tab active">Músicas Salvas</div>
+            <div class="tab">Fotos</div>
+            <div class="tab">Vídeos</div>
+            <div class="tab">Likes</div>
+        </div>
+
+        <!-- Lista de Músicas -->
+        <div class="info">
+            <!-- <div class="music-item">
+                <img src="capaDaMusica" alt="Capa da Música" class="music-cover">
+                <p class="music-title">Título da Música</p>
+            </div> -->
+        </div>
+    </div>
+
+    <script>
+        // Função para carregar o menu
+        function loadMenu() {
+            const menuContainer = document.getElementById('menu-container');
+            fetch('../../modules/elements/menu.html')
+                .then(response => response.text())
+                .then(html => {
+                    menuContainer.innerHTML = html;
+                })
+                .catch(error => console.error('Erro ao carregar o menu:', error));
+        }
+
+        // Função para alterar a imagem do banner
+        function handleBannerImage() {
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = 'image/*';
+            input.onchange = function (event) {
+                const file = event.target.files[0];
+                const reader = new FileReader();
+                reader.onload = function (readerEvent) {
+                    const banner = document.querySelector('.banner');
+                    banner.style.backgroundImage = `url(${readerEvent.target.result})`;
+                    banner.style.backgroundSize = 'cover';
+                };
+                reader.readAsDataURL(file);
+            };
+            input.click();
+        }
+
+        // Função para alterar a imagem do perfil
+        function handleProfileImage() {
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = 'image/*';
+            input.onchange = function (event) {
+                const file = event.target.files[0];
+                const reader = new FileReader();
+                reader.onload = function (readerEvent) {
+                    const profilePicture = document.querySelector('.profile-picture');
+                    profilePicture.src = readerEvent.target.result;
+
+                    // Salvar a imagem no localStorage
+                    localStorage.setItem('profilePic', readerEvent.target.result);
+                };
+                reader.readAsDataURL(file);
+            };
+            input.click();
+        }
+
+        // Carregar dados do localStorage ao carregar a página de perfil
+        function loadProfileData() {
+            const username = localStorage.getItem('username');
+            const bio = localStorage.getItem('bio');
+            const profilePic = localStorage.getItem('profilePic');
+            const country = localStorage.getItem('country');
+
+            if (username) {
+                document.querySelector('.profile-info .username').textContent = username;
+            }
+
+            if (bio) {
+                document.querySelector('.profile-info .bio').textContent = bio;
+            }
+
+            if (profilePic) {
+                document.getElementById('profile-picture').src = profilePic;
+            }
+
+            if (country) {
+                document.querySelector('.profile-info .country').textContent = country;
+            }
+        }
+
+        // Função para criar e adicionar múltiplas divs de músicas
+        function generateMusicItems() {
+
+            // vai ser buscado no DB dps
+            const musicData = [
+                { src: "capaDaMusica1.jpg", title: "Título da Música 1" },
+                { src: "capaDaMusica2.jpg", title: "Título da Música 2" },
+                { src: "capaDaMusica3.jpg", title: "Título da Música 3" },
+                { src: "capaDaMusica4.jpg", title: "Título da Música 4" },
+                { src: "capaDaMusica5.jpg", title: "Título da Música 5" },
+                { src: "capaDaMusica6.jpg", title: "Título da Música 6" },
+                { src: "capaDaMusica7.jpg", title: "Título da Música 7" },
+                { src: "capaDaMusica8.jpg", title: "Título da Música 8" }
+
+            ];
+
+            const infoContainer = document.querySelector('.info');
+
+            musicData.forEach(music => {
+                const musicItem = document.createElement('div');
+                musicItem.classList.add('music-item');
+
+                const musicCover = document.createElement('img');
+                musicCover.src = music.src;
+                musicCover.alt = `Capa da ${music.title}`;
+                musicCover.classList.add('music-cover');
+
+                const musicTitle = document.createElement('p');
+                musicTitle.textContent = music.title;
+                musicTitle.classList.add('music-title');
+
+                musicItem.appendChild(musicCover);
+                musicItem.appendChild(musicTitle);
+
+                infoContainer.appendChild(musicItem);
+            });
+        }
+
+        // Inicializar a página
+        document.addEventListener('DOMContentLoaded', function () {
+            loadMenu();
+            loadProfileData();
+            generateMusicItems();
+        });
+    </script>
+</body>
+
+</html>

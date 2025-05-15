@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <style>
+        /* Estilo do Menu Lateral */
+        .menu {
+            width: 80px;
+            height: 100vh;
+            border-radius: 6px;
+            background-color: #0d0d17;
+            position: fixed;
+            left: 0;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 20px;
+        }
+
+        .menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .menu ul li {
+            padding: 10px;
+        }
+
+        .menu ul li a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            text-align: center;
+            border-radius: 50%;
+            background-color: #1a1e30;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s;
+        }
+
+        .menu ul li a:hover {
+            background-color: #2a2f3d;
+        }
+
+        .menu ul li a img {
+            height: 40px;
+            width: auto;
+        }
+
+        .menu-profile-config {
+            display: flex;
+            flex-direction: column;
+            margin-top: auto;
+            padding-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Menu Lateral -->
+    <div class="menu">
+        <ul>
+            <li>
+                <a href="../Principal/principal.html" onclick="handleButtonClick('inicio')">
+                    <img src="../../pictures/icons/main.png" alt="Botão de Início">
+                </a>
+            </li>
+            <li>
+                <a href="../Pesquisa/TelaPesquisa.html" onclick="handleButtonClick('party')">
+                    <img src="../../pictures/icons/party.png" alt="Botão de Party">
+                </a>
+            </li>
+            <li>
+                <a href="../Album/MusicasSalvas.html" onclick="handleButtonClick('album')">
+                    <img src="../../pictures/icons/liked.png" alt="Botão de Album">
+                </a>
+            </li>
+            <li>
+                <a href="../Pets/TelaPets.html" onclick="handleButtonClick('pets')">
+                    <img src="../../pictures/icons/Pets.png" alt="Botão de Pets">
+                </a>
+            </li>
+            <li class="menu-separator"></li> <!-- Linha de separação -->
+            <div class="menu-profile-config">
+                <li>
+                    <a href="../../view/html/TelaPerfil.html" onclick="handleButtonClick('perfil')">
+                        <img src="../../pictures/icons/profile.png" alt="Botão de Perfil">
+                    </a>
+                </li>
+                <li>
+                    <a href="../Configurações/TelaConfig.html" onclick="handleButtonClick('configuracoes')">
+                        <img src="../../pictures/icons/config.png" alt="Botão de Configurações">
+                    </a>
+                </li>
+            </div>
+        </ul>
+    </div>
+</body>
+
+</html>

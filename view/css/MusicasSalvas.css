@@ -1,0 +1,240 @@
+ /* Estilos para a scrollbar */
+ ::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0d0d14;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1c1e2c;
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #191a25;
+}
+
+/* Corpo da página */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #131722;
+    color: #ffffff;
+    display: flex;
+    overflow-x: hidden; /* Impede a rolagem horizontal */
+}
+
+/* Menu lateral */
+.menu {
+    width: 80px;
+    height: 100vh;
+    border-radius: 12px;
+    background-color: #0d0d17;
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra suave */
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.menu ul li {
+    padding: 10px;
+}
+
+.menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    border-radius: 50%;
+    background-color: #1a1e30;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.menu ul li a:hover {
+    background-color: #2a2f3d;
+    transform: scale(1.1);
+}
+
+.menu ul li a img {
+    height: 40px;
+    width: auto;
+}
+
+.menu-profile-config {
+    display: flex;
+    flex-direction: column;
+    margin-top: auto;
+    padding-bottom: 20px;
+}
+
+/* Ajuste a margem do conteúdo para alinhar as playlists à esquerda do site */
+.content {
+    margin-left: 100px; /* Ajuste para deixar espaço suficiente do menu */
+    padding: 20px;
+    width: calc(100% - 100px); /* Ajuste a largura do conteúdo para compensar a margem */
+}
+
+/* Container de playlists */
+.playlist-container {
+    display: flex;
+    flex-direction: column; /* Alinha os itens verticalmente */
+    align-items: flex-start; /* Alinha os itens à esquerda do contêiner */
+    gap: 20px; /* Espaço maior entre os itens */
+    margin-left: 20px; /* Espaço à esquerda dos itens de playlist */
+}
+
+/* Cabeçalho */
+.header {
+    background-color: #161b25;
+    padding: 20px; /* Mais espaço no cabeçalho */
+    border-radius: 12px; /* Bordas mais arredondadas */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra mais suave */
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    font-size: 36px; /* Tamanho da fonte ajustado */
+    margin: 0;
+    font-weight: 700; /* Negrito no título */
+}
+
+/* Itens de playlists */
+.playlist-item {
+    width: 240px; /* Largura aumentada */
+    height: 240px; /* Altura aumentada */
+    background-color: #2a2f3d;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s; /* Adiciona transição de cor de fundo */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra suave padrão */
+}
+
+.playlist-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra mais pronunciada */
+}
+
+/* Capas das músicas */
+.music-covers {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Duas colunas */
+    grid-template-rows: repeat(2, 1fr); /* Duas linhas */
+    gap: 5px; /* Espaço menor entre as capas */
+    width: 100%;
+    height: 100%;
+    padding: 5px; /* Menos padding para se ajustar ao grid */
+}
+
+.music-cover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px; /* Bordas mais arredondadas */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra suave nas capas */
+}
+
+/* Título da playlist */
+.playlist-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    font-size: 20px; /* Tamanho da fonte aumentado */
+    font-weight: 600; /* Negrito no título */
+    color: #ffffff;
+    background: rgba(0, 0, 0, 0.6); /* Fundo um pouco mais opaco */
+    border-radius: 0 0 12px 12px;
+    text-align: center;
+}
+
+/* Overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8); /* Cor de fundo mais escura */
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 900; /* Deve estar abaixo do painel lateral */
+}
+
+/* Painel lateral */
+.side-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 350px; /* Largura reduzida */
+    height: 100%;
+    background-color: #1a1e30;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    padding: 20px;
+    overflow-y: auto;
+    color: #fff;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3); /* Sombra mais pronunciada */
+    z-index: 1000;
+}
+
+.side-panel.show {
+    transform: translateX(0);
+}
+
+.overlay.show {
+    transform: translateX(0);
+}
+
+/* Estilo das capas das músicas na vertical */
+.music-cover-vertical {
+    width: 80px; /* Largura menor para melhor visualização vertical */
+    height: auto;
+    border-radius: 8px;
+    margin: 10px 0; /* Espaçamento entre capas */
+}
+
+/* Capa da playlist no painel */
+.playlist-cover {
+    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Duas colunas */
+    grid-template-rows: repeat(2, 1fr); /* Duas linhas */
+    gap: 5px; /* Espaçamento menor entre a      s capas */
+}
+
+.playlist-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
